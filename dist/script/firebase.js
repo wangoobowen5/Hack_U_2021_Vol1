@@ -1,4 +1,4 @@
-import { firebaseConfig } from '.firebase_config';
+import { firebaseConfig } from './firebase_config.js';
 firebase.initializeApp(firebaseConfig);
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
