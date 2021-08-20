@@ -1,0 +1,25 @@
+{
+  "name": "Hack_U_2021_Vol1",
+  "version": "1.0.0",
+  "description": "Open HackU 2021 team:ビスラボリポジトリ",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangoobowen5/Hack_U_2021_Vol1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangoobowen5/Hack_U_2021_Vol1/issues"
+  },
+  "homepage": "https://github.com/wangoobowen5/Hack_U_2021_Vol1#readme",
+  "devDependencies": {
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  }
+}
