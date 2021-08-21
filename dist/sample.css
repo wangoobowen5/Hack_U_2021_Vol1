@@ -1,0 +1,170 @@
+.title{
+	position:relative;
+    top: 10%;
+	left:20%;
+}
+
+.home {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left:60%;
+}
+
+.calendar {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left:65%;
+}
+
+.btn-circle-border-simple {
+    display: inline-block;
+    text-decoration: none;
+    color: #668ad8;
+    width: 30px;
+    height: 30px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: solid 2px #668ad8;
+    overflow: hidden;
+    position: absolute;
+    top: 4%;
+    left: 73%;
+  }
+
+.template{
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 13%;
+    left: 24%;
+}
+
+.background{
+    background-color: #E5E5E5;
+    width: 60%;
+    height: 100%;
+    position:absolute;
+    top: 11.25%;
+    left: 20%;
+}
+
+.btn_add {
+    border-radius: 5px;
+    background-color: #EDAD0B;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    top: 14%;
+    left:70%;
+}
+
+.btn_play {
+    font-family: sans-serif;
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 20%;
+    left:23%;
+}
+
+.wheel_play {
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 21%;
+    left:70%;
+}
+
+.btn_report {
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 30%;
+    left:23%;
+}
+
+.wheel_report {
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 31%;
+    left:70%;
+}
+
+.btn_presen {
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 40%;
+    left:23%;
+}
+
+.wheel_presen {
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 41%;
+    left:70%;
+}
+
+.btn_meeting {
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 50%;
+    left:23%;
+}
+
+.wheel_meeting {
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 51%;
+    left:70%;
+}
+
+.btn_other {
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 60%;
+    left:23%;
+}
+
+.wheel_other {
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 61%;
+    left:70%;
+}
