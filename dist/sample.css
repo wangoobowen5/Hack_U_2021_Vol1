@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .title{
 	position: relative;
 	left:25%;
@@ -37,15 +39,17 @@
     bottom: 5px;
   }
 
-.background{
-    background-color: #E5E5E5;
-    width: 60%;
-    height: 100%;
-    position:absolute;
-    top: 11.25%;
-    left: 20%;
+hr.line{
+    margin: 0;
 }
 
+.background{
+    margin-left: auto;
+    margin-right: auto;
+	height: 600px;
+    width: 700px;
+    background-color: #E5E5E5;
+}
 
 .btn_add {
     border-radius: 5px;
@@ -60,7 +64,7 @@
 .template{
     color: black;
     position: relative;
-    left: 250px;
+    left: 20%;
     height: 50px;
     margin: 10px;
 }
