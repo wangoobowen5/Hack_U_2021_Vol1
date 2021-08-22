@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.title{
+	position: relative;
+	left:25%;
+}
+
+.front{
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    display: flex;
+}
+.home {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    right: 10px;
+}
+
+.calendar {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    left: 10px;
+}
+
+.btn-circle-border-simple {
+    text-decoration: none;
+    color: #668ad8;
+    width: 30px;
+    height: 30px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: solid 2px #668ad8;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+    bottom: 5px;
+  }
+
+hr.line{
+    margin: 0;
+}
+
+.background{
+    margin-left: auto;
+    margin-right: auto;
+	height: 600px;
+    width: 700px;
+    background-color: #E5E5E5;
+}
+
+.btn_add {
+    border-radius: 5px;
+    background-color: #EDAD0B;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 10px;
+}
+
+.template{
+    color: black;
+    position: relative;
+    left: 20%;
+    height: 50px;
+    margin: 10px;
+}
+.btn_template {
+    font-family: sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.wheel{
+    position: relative;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
