@@ -20,9 +20,9 @@ h3{
         position: relative;
         left: 2%;
     }
- }
+}
 
- @media screen and (min-width: 481px){
+@media screen and (min-width: 481px){
     .front{
         position: fixed;
         top: 5%;
@@ -55,9 +55,9 @@ h3{
         left: 20px;
         bottom: 5px;
     }    
- }
+}
 
- @media screen and (max-width: 480px){
+@media screen and (max-width: 480px){
     .front{
         position: absolute;
         top: 3%;
@@ -92,7 +92,7 @@ h3{
         left: 10px;
         bottom: 5px;
     }
- }
+}
 
 hr.line{
     margin: 0;
@@ -115,7 +115,7 @@ hr.line{
         height: 600px;
         /*overflow: scroll;*/
     }
- }
+}
 
 .btn_add {
     border-radius: 5px;
