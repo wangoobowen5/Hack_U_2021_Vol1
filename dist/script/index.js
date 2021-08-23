@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // }
         // ],
         dateClick: function (info) {
-            location.href = './template.html?date=' + info.dateStr; // schedule_formが出来次第変更
+            location.href = './template.php?date=' + info.dateStr; // schedule_formが出来次第変更
         },
         eventClick: function (info) {
             console.log('Event: ' + info.event.title);
