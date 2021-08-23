@@ -18,7 +18,7 @@
             </div>
             <nav>
                 <a href="./index.html" class="home nav-link">ホーム</a>
-                <a href="./template.html" class="calendar nav-link">テンプレート</a>
+                <a href="./template.php" class="calendar nav-link">テンプレート</a>
                 <a href="./user.php" class="btn-circle-border-simple nav-link"></a>
             </nav>
         </div>
