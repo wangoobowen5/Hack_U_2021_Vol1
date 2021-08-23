@@ -100,9 +100,9 @@ hr.line{
 .term {
     display: inline-block;
     width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
+    padding: 8px 10px;
+    /*border: none;*/
+    border-radius: 3px;
     background-color: #fff;
     color: #000;
     font-weight: bold;
@@ -112,6 +112,10 @@ hr.line{
     cursor: pointer;
     border: 2px solid transparent;
 }
+
+
+
+
 
 .wrapper-term{
     display: -webkit-flex;
@@ -124,6 +128,12 @@ hr.line{
     justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
 }
 
+.namisen{
+    height:180px;
+    display: grid;
+    place-items: center;
+}
+
 .wrapper-cancel-register{
     display: -webkit-flex;
     display: -moz-flex;
@@ -131,14 +141,14 @@ hr.line{
     display: -o-flex;
     display: flex;        
     justify-content: center;        /*中央揃え*/
-    padding:10px 50px;
+    padding:10px 90px;
     justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
 }   
 
 .form-cansel-button {
     display:inline-block;
     background:#ffffff;
-    padding:10px 50px;
+    padding:10px 90px;
     
     color:rgb(138, 138, 138);
     margin:5px;
@@ -153,7 +163,7 @@ hr.line{
 .form-register-button {
     display:inline-block;
     background:#ffbb00;
-    padding:10px 50px;
+    padding:10px 90px;
     
     color:#fff;
     margin:5px;
@@ -165,7 +175,187 @@ hr.line{
     flex-direction: row;
 }
 
+/****スマホ対応****/
+@media screen and (max-width: 480px) {
+   
 
+.title{
+	position: relative;
+	left:25%;
+}
+
+.front{
+    position: relative;
+    top: 5%;
+    left: 65%;
+    display: block;
+}
+.home {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    right: 10px;
+}
+
+.calendar {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    left: 10px;
+}
+
+.btn-circle-border-simple {
+    text-decoration: none;
+    color: #668ad8;
+    width: 30px;
+    height: 30px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: solid 2px #668ad8;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+    bottom: 5px;
+  }
+
+hr.line{
+    margin: 0;
+}
+
+.background{
+    margin-left: auto;
+    margin-right: auto;
+	height: 1000px;
+    width: 700px;
+    background-color: #E5E5E5;
+    
+}
+
+
+.schedule-title{
+    /*color: black;*/
+    position: relative;
+    left: 2%;
+    height: 50px;
+    margin: 10px;
+}
+
+.schedule-name{
+    width: 80%; /*親要素半分*/
+    padding: 10px 20px; /*ボックスを大きくする*/
+    font-size: 16px;
+    border-radius: 3px; /*ボックス角の丸み*/
+    
+    border-style: solid; 
+    border-color: #ccc;
+    border-bottom: 2px solid #f7f7f7;
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+    position:relative;
+    display: inline-flex;
+    justify-content: center;
+    
+}
+
+.template{
+    width: 730px;
+    padding: 5px 10px;
+    margin:5em auto;
+    position:5em auto;  
+}
+
+.template select{    
+    width:50%;
+    padding:12px 20px;
+    font-size:16px;
+    border-radius:3px;
+    border-bottom: 2px solid #f7f7f7;    
+    background:#fff;
+    box-sizing: border-box;
+    position:relative;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.term {
+    display: inline-block;
+    width: 50%;
+   
+    padding: 8px 10px;
+    /*border: none;*/
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+
+
+
+
+.wrapper-term{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: block;        
+    justify-content: center;        /*中央揃え*/
+    
+    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
+}
+
+.namisen{
+    height:180px;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper-cancel-register{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;        
+    justify-content: center;        /*中央揃え*/
+    padding:10px 90px;
+    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
+}   
+
+.form-cansel-button {
+    display:inline-block;
+    background:#ffffff;
+    padding:10px 90px;
+    
+    color:rgb(138, 138, 138);
+    margin:5px;
+    border:1px solid;
+    cursor:pointer;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.form-register-button {
+    display:inline-block;
+    background:#ffbb00;
+    padding:10px 90px;
+    
+    color:#fff;
+    margin:5px;
+    border:1px solid;
+    cursor:pointer;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+}
 
 
 
