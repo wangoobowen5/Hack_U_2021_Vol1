@@ -24,7 +24,7 @@ h3{
 
 @media screen and (min-width: 481px){
     .front{
-        position: fixed;
+        position: absolute;
         top: 5%;
         left: 65%;
         display: flex;
@@ -61,7 +61,7 @@ h3{
     .front{
         position: absolute;
         top: 3%;
-        right: 25%;
+        right: 20%;
         display: flex;
     }
     .home {
@@ -102,7 +102,7 @@ hr.line{
     .background{
         margin-left: auto;
         margin-right: auto;
-        height: 600px;
+        height: 800px;
         width: 700px;
         background-color: #E5E5E5;
     }
@@ -112,7 +112,7 @@ hr.line{
     .background{
         margin: auto;
         background-color: #E5E5E5;
-        height: 600px;
+        height: 800px;
         /*overflow: scroll;*/
     }
 }
