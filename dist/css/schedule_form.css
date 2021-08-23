@@ -325,7 +325,7 @@ hr.line{
     justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
 }   
 
-.form-cansel-button {
+.form-cancel-button {
     display:inline-block;
     background:#ffffff;
     padding:10px 90px;
