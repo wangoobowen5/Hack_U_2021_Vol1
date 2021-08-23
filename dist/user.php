@@ -46,7 +46,7 @@
                         <h2 class="begin-text">何時から</h2>
                         <div class="begin-input time-input"></div>
                     </div>
-                    <h2>〜</h2>
+                    <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
                         <h2 class="end-text">何時まで</h2>
                         <div class="end-input time-input"></div>
