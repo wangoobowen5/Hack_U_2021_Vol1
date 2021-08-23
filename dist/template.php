@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./sample.css">
+        <link rel="stylesheet" href="./css/template.css">
         <title>ラクスケ</title>
     </head>
     
@@ -14,7 +14,7 @@
 
         <div class="front">
             <a href="./index.html" class="home">ホーム</a>
-            <a href="./template.html" class="calendar">テンプレート</a>
+            <a href="./template.php" class="calendar">テンプレート</a>
             <a href="./user.html" class="btn-circle-border-simple"></a>
         </div>
         <hr color="black" class="line">
@@ -29,28 +29,28 @@
 
             <div class="template">
                 <a href="./template_form.php" class="btn_template">🔴　遊びの計画</a>
-                <a href="./template_form.php"><img src="wheel.png" class="wheel"></a>
+                <a href="./template_form.php"><img src="./image/wheel.png" class="wheel"></a>
             </div>
 
             <div class="template">
                 <a href="./template_form.php" class="btn_template">🟡　レポート</a>
-                <a href="./template_form.php"><img src="wheel.png" class="wheel"></a>
+                <a href="./template_form.php"><img src="./image/wheel.png" class="wheel"></a>
             </div>
 
             <div class="template">
                 <a href="./template_form.php" class="btn_template">🔵　プレゼン準備</a>
-                <a href="./template_form.php"><img src="wheel.png" class="wheel"></a>
+                <a href="./template_form.php"><img src="./image/wheel.png" class="wheel"></a>
             </div>
 
             <div class="template">
                 <a href="./template_form.php" class="btn_template">🟢　会議のタイムキーパー</a>
-                <a href="./template_form.php"><img src="wheel.png" class="wheel"></a>
+                <a href="./template_form.php"><img src="./image/wheel.png" class="wheel"></a>
             </div>
 
 
             <div class="template">
                 <a href="./template_form.php" class="btn_template">🟤　追加したテンプレート</a>
-                <a href="./template_form.php"><img src="wheel.png" class="wheel"></a>
+                <a href="./template_form.php"><img src="./image/wheel.png" class="wheel"></a>
             </div>
         </div>
     </body>
