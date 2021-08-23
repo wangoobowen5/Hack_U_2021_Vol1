@@ -32,6 +32,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 if (location.pathname === '/Hack_U_2021_Vol1/dist/temp.php') {
     firebase.auth().onAuthStateChanged(function (user) {
         var data = { "userid": user.uid, "username": user.displayName };
-        post('/Hack_U_2021_Vol1/dist/index.html', data);
+        post('/Hack_U_2021_Vol1/dist/index.php', data);
     });
 }
