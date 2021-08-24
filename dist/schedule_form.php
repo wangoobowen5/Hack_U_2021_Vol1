@@ -10,6 +10,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>予定登録</title>
     </head>
@@ -47,12 +48,12 @@
             <div class="wrapper-term">
                 <div class="term-begining">
                     <p><h4>いつから</h4></p>
-                    <input type="text" id="flatpickr">             
+                    <input type="text" id="start-flatpickr">             
                 </div>
                 <div class="namisen"><h3>～</h3></div>
                 <div class="term-end">
                     <p><h4>いつまで</h4></p>
-                    <input type="text" id="flatpickr">             
+                    <input type="text" id="end-flatpickr">             
                 </div>
             </div>
             <br>
@@ -65,12 +66,9 @@
             <p>・～～～～～～～～～～～～～：20%</p>
             <p>・～～～～～～～～～～～～～：30%</p>
             <p>・～～～～～～～～～～～～～：50%</p>  
-           
-            
-            
         </div>
-        <script>
-            flatpickr("#flatpickr", {locale:"ja", minDate:"today"});
-        </script>
+
+        <script src="./script/firebase.js" type="module"></script>
+        <script src="./script/schedule_form.js" type="module"></script>
     </body>
 </html>
