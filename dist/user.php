@@ -31,7 +31,7 @@
                     <div class="btn-circle-border-simple"></div>
                     <h1 class="user-name">ユーザー名</h1>
                 </div>
-                <p><button class="logout-button common-button">ログアウト</button></p>
+                <p><button class="logout-button common-button" id="logout-button">ログアウト</button></p>
             </div>
             <div class="main-content">
                 <div class="schedule-area flex">
