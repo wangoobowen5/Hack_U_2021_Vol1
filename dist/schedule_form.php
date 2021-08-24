@@ -2,8 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/schedule_form.css">
+
         <title>ラクスケ</title>
     </head>
     
@@ -40,12 +43,12 @@
             <div class="wrapper-term">
                 <div class="term-begining">
                     <p><h4>いつから</h4></p>
-                    <button type="submit" class="term">　　　-　　　</button>                
+                    <input type="text" id="flatpickr">             
                 </div>
                 <div class="namisen"><h3>～</h3></div>
                 <div class="term-end">
                     <p><h4>いつまで</h4></p>
-                    <button type="submit" class="term">　　　-　　　</button>                
+                    <input type="text" id="flatpickr">             
                 </div>
             </div>
             <br>
@@ -62,5 +65,8 @@
             
             
         </div>
+        <script>
+            flatpickr("#flatpickr", {locale:"ja", minDate:"today"});
+        </script>
     </body>
 </html>
