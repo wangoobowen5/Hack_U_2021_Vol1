@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/schedule_form.css">
-
-        <title>ラクスケ</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>予定登録</title>
     </head>
     
     <body>
@@ -27,12 +31,12 @@
 
             <div class="schedule-title">
                 <h3 style="display:inline;">予定登録</h3><br>
-                <input type="text" id="" name="" placeholder="タイトル" class="schedule-name"/>
-		    </div>
+                <input type="text" id="" name="schedule-name" placeholder="タイトル" class="schedule-name"/>
+            </div>
 
             <div class="template">
                 <h3 style="display:inline;">テンプレート</h3> 
-                <select name="template-list" >
+                <select name="template-list">
                     <option value="" hiden>テンプレートを選択</option>
                     <option value="hung-out">遊びの計画</option>
                     <option value="report">レポート</option>
@@ -53,8 +57,8 @@
             </div>
             <br>
             <div class="wrapper-cancel-register">
-                <button type="submit" class="form-cancel-button">キャンセル</button>
-                <button type="submit" class="form-register-button">登録</button>
+                <p><a href="./index.php" class="form-cancel-button">キャンセル</a></p>
+                <p><button class="form-register-button">登録</button></p>
             </div>
             
             <p>以下の内容が登録されます。</p>
