@@ -22,37 +22,39 @@
         <div class="background">
             <br>
 
-            <div class="schedule-title">
-                <h3 style="display:inline;">予定登録</h3><br>
-                <input type="text" id="" name="" placeholder="タイトル" class="schedule-name"/>
-		    </div>
+            <form action="./index.php" method="post">
+                <div class="schedule-title">
+                    <h3 style="display:inline;">予定登録</h3><br>
+                    <input type="text" id="" name="schedule-name" placeholder="タイトル" class="schedule-name"/>
+                </div>
 
-            <div class="template">
-                <h3 style="display:inline;">テンプレート</h3> 
-                <select name="template-list" >
-                    <option value="" hiden>テンプレートを選択</option>
-                    <option value="hung-out">遊びの計画</option>
-                    <option value="report">レポート</option>
-                    <option value="presentation">プレゼン準備</option>
-                    <option value="time-keeper">会議のタイムキーパー</option>                    
-                </select>          
-            </div>
-            <div class="wrapper-term">
-                <div class="term-begining">
-                    <p><h4>いつから</h4></p>
-                    <button type="submit" class="term">　　　-　　　</button>                
+                <div class="template">
+                    <h3 style="display:inline;">テンプレート</h3> 
+                    <select name="template-list">
+                        <option value="" hiden>テンプレートを選択</option>
+                        <option value="hung-out">遊びの計画</option>
+                        <option value="report">レポート</option>
+                        <option value="presentation">プレゼン準備</option>
+                        <option value="time-keeper">会議のタイムキーパー</option>                    
+                    </select>          
                 </div>
-                <div class="namisen"><h3>～</h3></div>
-                <div class="term-end">
-                    <p><h4>いつまで</h4></p>
-                    <button type="submit" class="term">　　　-　　　</button>                
+                <div class="wrapper-term">
+                    <div class="term-begining">
+                        <p><h4>いつから</h4></p>
+                        <input type="text" id="flatpickr">             
+                    </div>
+                    <div class="namisen"><h3>～</h3></div>
+                    <div class="term-end">
+                        <p><h4>いつまで</h4></p>
+                        <input type="text" id="flatpickr">             
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="wrapper-cancel-register">
-                <button type="submit" class="form-cancel-button">キャンセル</button>
-                <button type="submit" class="form-register-button">登録</button>
-            </div>
+                <br>
+                <div class="wrapper-cancel-register">
+                    <button type="submit" class="form-cancel-button">キャンセル</button>
+                    <input type="submit" class="form-register-button">登録</input>
+                </div>
+            </form>
             
             <p>以下の内容が登録されます。</p>
             <p>・～～～～～～～～～～～～～：20%</p>
