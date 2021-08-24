@@ -5,7 +5,8 @@
 
     // user.php内の更新ボタンが押された場合の処理
     // データベースに保存する機能も必要
-    if ($_POST["begin-time"] and $_POST["end-time"]) {
+    if ($_POST["userid"] and $_POST["begin-time"] and $_POST["end-time"]) {
+        $userid = $_POST["useid"];
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
 
