@@ -8,7 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-    <title>Document</title>
+    <title>ユーザー設定</title>
 </head>
 <body>
     <header>
@@ -43,12 +43,12 @@
                 </div>
                 <div class="schedule-time flex">
                     <div class="begin flex">
-                        <h2 class="begin-text">何時から</h2>
+                        <h2 class="begin-text">開始</h2>
                         <div class="begin-input time-input"></div>
                     </div>
                     <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
-                        <h2 class="end-text">何時まで</h2>
+                        <h2 class="end-text">終了</h2>
                         <div class="end-input time-input"></div>
                     </div>
                 </div>
@@ -57,6 +57,5 @@
     </main>
 
     <script src="./script/firebase.js" type="module"></script>
-    <script src="./script/index.js" type="module"></script>
 </body>
 </html>

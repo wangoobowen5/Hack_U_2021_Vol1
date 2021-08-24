@@ -129,16 +129,33 @@ main {
     padding-top: 30px;
   }
 
+  .common-button {
+    width: 80px;
+    height: 33px;
+    border-radius: 7.5px;
+    font-size: 12px;
+  }
+
   .user-name {
     font-size: 24px;
     margin-bottom: 0;
   }
 
-  .schedule-time {
+  .schedule-time, .begin, .end {
     flex-direction: row;
   }
 
   .schedule-tilde {
     display: none;
+  }
+
+  .begin-text, .end-text {
+    font-size: 18px;
+  }
+
+  .time-input {
+    width: 125px;
+    height: 40px;
+    margin-left: 5px;
   }
 }
