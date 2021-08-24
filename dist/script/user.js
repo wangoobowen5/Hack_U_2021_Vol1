@@ -1,9 +1,11 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', function () {
-    $('#begin-input').timepicker({
+    var beginTime = $('#begin-time').attr('value');
+    var endTime = $('#end-time').attr('value');
+    $('#begin-time').timepicker({
         'timeFormat': 'H:i'
     });
-    $('#end-input').timepicker({
+    $('#end-time').timepicker({
         'timeFormat': 'H:i'
     });
 }, false);

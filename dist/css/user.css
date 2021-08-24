@@ -88,6 +88,8 @@ main {
   border: none;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 .user-area {
@@ -103,6 +105,21 @@ main {
   color: #fcfcfc;
 }
 
+.update-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.update-text {
+  margin: 0;
+  height: 21px;
+}
+
+.update-p {
+  margin: 0 auto 30px;
+}
+
 .time-input {
   background-color: #ffffff;
   border: none;
@@ -112,6 +129,10 @@ main {
   margin-left: 10px;
   font-size: 20px;
   text-align: center;
+}
+
+.hide-text {
+  margin-top: 0;
 }
 
 

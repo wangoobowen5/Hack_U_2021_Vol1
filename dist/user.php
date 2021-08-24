@@ -1,3 +1,19 @@
+<?php
+    // 本来はデータベースから初期値を取ってくる
+    $begin_time = "09:00";
+    $end_time = "21:00";
+
+    // user.php内の更新ボタンが押された場合の処理
+    // データベースに保存する機能も必要
+    if ($_POST["begin-time"] and $_POST["end-time"]) {
+        $begin_time = $_POST["begin-time"];
+        $end_time = $_POST["end-time"];
+
+        // 無事にデータベースを更新できた場合に表示
+        $update_text = "更新しました！";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,26 +52,31 @@
                 </div>
                 <p><button class="logout-button common-button" id="logout-button">ログアウト</button></p>
             </div>
-            <div class="main-content">
+            <form class="main-content" method="post" action="user.php">
                 <div class="schedule-area flex">
                     <div class="schedule-description">
                         <h2 class="schedule-title">予定を追加しても良い時間</h2>
                         <p class="schedule-text">入力した時間内に自動で予定を追加します。</p>
                     </div>
-                    <p><button class="schedule-update-button common-button">更新</button></p>
+                    <div class="update-area">
+                        <p class="update-text"><?= $update_text ?></p>
+                        <p class="update-p"><input type="submit" value="更新" class="schedule-update-button common-button"></input></p>
+                    </div>
                 </div>
                 <div class="schedule-time flex">
                     <div class="begin flex">
                         <h2 class="begin-text">開始</h2>
-                        <p><input type="text" id="begin-input" class="time-input"></p>
+                        <!-- PHPで開始時間の初期値を入れる -->
+                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?= $begin_time ?>></p>
                     </div>
                     <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
                         <h2 class="end-text">終了</h2>
-                        <p><input type="text" id="end-input" class="time-input"></p>
+                        <!-- PHPで開始時間の初期値を入れる -->
+                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?= $end_time ?>></p>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 
