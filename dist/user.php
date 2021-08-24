@@ -10,7 +10,7 @@
         $end_time = $_POST["end-time"];
 
         // 無事にデータベースを更新できた場合に表示
-        $update_text = "更新しました！";
+        $update_text = "保存しました！";
     }
 ?>
 
@@ -60,7 +60,7 @@
                     </div>
                     <div class="update-area">
                         <p class="update-text"><?= $update_text ?></p>
-                        <p class="update-p"><input type="submit" value="更新" class="schedule-update-button common-button"></input></p>
+                        <p class="update-p"><input type="submit" value="保存" class="schedule-update-button common-button"></input></p>
                     </div>
                 </div>
                 <div class="schedule-time flex">
