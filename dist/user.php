@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.js"></script>
     <title>ユーザー設定</title>
 </head>
 <body>
@@ -44,12 +47,12 @@
                 <div class="schedule-time flex">
                     <div class="begin flex">
                         <h2 class="begin-text">開始</h2>
-                        <div class="begin-input time-input"></div>
+                        <p><input type="text" id="begin-input" class="time-input"></p>
                     </div>
                     <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
                         <h2 class="end-text">終了</h2>
-                        <div class="end-input time-input"></div>
+                        <p><input type="text" id="end-input" class="time-input"></p>
                     </div>
                 </div>
             </div>
@@ -57,5 +60,6 @@
     </main>
 
     <script src="./script/firebase.js" type="module"></script>
+    <script src="./script/user.js" type="module"></script>
 </body>
 </html>

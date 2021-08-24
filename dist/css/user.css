@@ -105,10 +105,13 @@ main {
 
 .time-input {
   background-color: #ffffff;
+  border: none;
   border-bottom: solid 1px #000000;
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   margin-left: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
 
@@ -154,8 +157,6 @@ main {
   }
 
   .time-input {
-    width: 125px;
-    height: 40px;
     margin-left: 5px;
   }
 }
