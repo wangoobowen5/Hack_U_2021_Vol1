@@ -13,9 +13,9 @@
 		</div>
 
         <div class="front">
-            <a href="./index.html" class="home">ホーム</a>
+            <a href="./index.php" class="home">ホーム</a>
             <a href="./template.php" class="calendar">テンプレート</a>
-            <a href="./user.html" class="btn-circle-border-simple"></a>
+            <a href="./user.php" class="btn-circle-border-simple"></a>
         </div>
         <hr color="black" class="line">
 

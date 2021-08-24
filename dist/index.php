@@ -17,12 +17,12 @@
     <header>
         <div class="header-rapper common-rapper">
             <div class="title">
-                <h1><a href="./index.html" class="title-link">ラクスケ</a></h1>
+                <h1><a href="./index.php" class="title-link">ラクスケ</a></h1>
             </div>
             <nav>
-                <a href="./index.html" class="home nav-link">ホーム</a>
+                <a href="./index.php" class="home nav-link">ホーム</a>
                 <a href="./template.php" class="calendar nav-link">テンプレート</a>
-                <a href="./user.html" class="btn-circle-border-simple nav-link"></a>
+                <a href="./user.php" class="btn-circle-border-simple nav-link"></a>
             </nav>
         </div>
     </header>

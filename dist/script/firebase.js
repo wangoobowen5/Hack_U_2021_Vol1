@@ -17,6 +17,7 @@ var uiConfig = {
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
 };
+// loginページの場合のみFirebase Auth を表示
 if (location.pathname === '/Hack_U_2021_Vol1/dist/login.php') {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ui.start('#firebaseui-auth-container', uiConfig);
@@ -32,6 +33,16 @@ firebase.auth().onAuthStateChanged(function (user) {
 if (location.pathname === '/Hack_U_2021_Vol1/dist/temp.php') {
     firebase.auth().onAuthStateChanged(function (user) {
         var data = { "userid": user.uid, "username": user.displayName };
-        post('/Hack_U_2021_Vol1/dist/index.html', data);
+        post('/Hack_U_2021_Vol1/dist/index.php', data);
     });
+}
+// userページでログアウトボタンを押した時の処理
+if (location.pathname === '/Hack_U_2021_Vol1/dist/user.php') {
+    var logout = document.getElementById('logout-button');
+    logout.addEventListener('click', function () {
+        firebase.auth().signOut().then(function () { })
+            .catch(function (error) {
+            console.log(error);
+        });
+    }, false);
 }
