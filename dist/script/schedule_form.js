@@ -1,7 +1,7 @@
 import { post } from './modules.js';
 document.addEventListener('DOMContentLoaded', function () {
-    flatpickr("#start-date", { locale: "ja", minDate: "today" });
-    flatpickr("#end-date", { locale: "ja", minDate: "today" });
+    flatpickr("#start-date", { locale: "ja" });
+    flatpickr("#end-date", { locale: "ja" });
     document.getElementById('form-register-button').addEventListener('click', function () {
         var scheduleName = document.getElementById('schedule-name').value;
         var templateList = document.getElementById("template-list");

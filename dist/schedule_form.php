@@ -1,3 +1,7 @@
+<?php
+    $startDate = $_GET['date'];
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -48,7 +52,7 @@
             <div class="wrapper-term">
                 <div class="term-begining">
                     <p><h4>いつから</h4></p>
-                    <input type="text" id="start-date">             
+                    <input type="text" id="start-date" value=<?= $startDate ?>>             
                 </div>
                 <div class="namisen"><h3>～</h3></div>
                 <div class="term-end">

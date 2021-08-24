@@ -1,8 +1,8 @@
 import { post } from './modules.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-    flatpickr("#start-date", {locale:"ja", minDate:"today"});
-    flatpickr("#end-date", {locale:"ja", minDate:"today"});
+    flatpickr("#start-date", {locale:"ja"});
+    flatpickr("#end-date", {locale:"ja"});
 
     document.getElementById('form-register-button').addEventListener('click', () => {
         const scheduleName: string = document.getElementById('schedule-name').value;
