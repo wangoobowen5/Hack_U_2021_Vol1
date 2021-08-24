@@ -1,3 +1,4 @@
+/* 全体で共通 */
 @charset "utf-8";
 
 html {
@@ -18,7 +19,7 @@ body {
   padding: 0;
 }
 
-/* ここからheader */
+/* header */
 header {
   margin: 0;
   padding: 0;
@@ -92,6 +93,10 @@ main {
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
+.common-button:active {
+  box-shadow: none;
+}
+
 .user-area {
   padding-top: 100px;
 }
@@ -135,7 +140,7 @@ main {
   margin-top: 0;
 }
 
-
+/* 以下スマホ */
 @media screen and (max-width: 480px) {
   .common-rapper {
     padding: 0 10px;
