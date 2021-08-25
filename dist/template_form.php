@@ -41,7 +41,7 @@
                 </div>
                 <div class="template">
                     <a href="./template.php" class="btn_cancel">キャンセル</a>
-                    <input type="submit" value="登録" class="submit2">
+                    <input type="submit" value="登録" class="submit">
                 </div>
             </form>
         </div>
