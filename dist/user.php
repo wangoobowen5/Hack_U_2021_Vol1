@@ -5,12 +5,13 @@
 
     // user.php内の更新ボタンが押された場合の処理
     // データベースに保存する機能も必要
-    if ($_POST["begin-time"] and $_POST["end-time"]) {
+    if ($_POST["userid"] and $_POST["begin-time"] and $_POST["end-time"]) {
+        $userid = $_POST["useid"];
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
 
         // 無事にデータベースを更新できた場合に表示
-        $update_text = "更新しました！";
+        $update_text = "保存しました！";
     }
 ?>
 
@@ -58,7 +59,10 @@
                         <h2 class="schedule-title">予定を追加しても良い時間</h2>
                         <p class="schedule-text">入力した時間内に自動で予定を追加します。</p>
                     </div>
-                    <p><button class="schedule-update-button common-button">更新</button></p>
+                    <div class="update-area">
+                        <p class="update-text"><?= $update_text ?></p>
+                        <p class="update-p"><button id="schedule-update-button" class="schedule-update-button common-button">保存</button></p>
+                    </div>
                 </div>
                 <div class="schedule-time flex">
                     <div class="begin flex">
