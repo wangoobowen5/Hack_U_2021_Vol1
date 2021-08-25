@@ -1,362 +1,289 @@
 @charset "utf-8";
 
-.title{
-	position: relative;
-	left:25%;
+body{
+    margin: 0;
 }
 
-.front{
-    position: absolute;
-    top: 5%;
-    left: 65%;
-    display: flex;
-}
-.home {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    right: 10px;
+h3{
+    display: inline-block;
 }
 
-.calendar {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    left: 10px;
+h4{
+    display: inline-block;
 }
 
-.btn-circle-border-simple {
-    text-decoration: none;
-    color: #668ad8;
-    width: 30px;
-    height: 30px;
-    line-height: 50px;
-    border-radius: 50%;
-    border: solid 2px #668ad8;
-    overflow: hidden;
-    position: relative;
-    left: 20px;
-    bottom: 5px;
-  }
+@media screen and (min-width: 481px){
+    .title{
+        position: relative;
+        left:25%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .title{
+        font-size: 10px;
+        position: relative;
+        left: 2%;
+    }
+ }
+
+ @media screen and (min-width: 481px){
+    .front{
+        position: absolute;
+        top: 5%;
+        left: 65%;
+        display: flex;
+    }
+    .home {
+        color: black;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    .calendar {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        left: 10px;
+    }
+    
+    .btn-circle-border-simple {
+        text-decoration: none;
+        color: #668ad8;
+        width: 30px;
+        height: 30px;
+        line-height: 50px;
+        border-radius: 50%;
+        border: solid 2px #668ad8;
+        overflow: hidden;
+        position: relative;
+        left: 20px;
+        bottom: 5px;
+    }    
+    .background{
+        margin-left: auto;
+        margin-right: auto;
+        height: 800px;
+        width: 700px;
+        background-color: #E5E5E5;
+    }
+ }
+
+ @media screen and (max-width: 480px){
+    .front{
+        position: absolute;
+        top: 3%;
+        right: 20%;
+        display: flex;
+    }
+    .home {
+        color: black;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    .calendar {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        left: 5px;
+    }
+    
+    .btn-circle-border-simple {
+        text-decoration: none;
+        color: #668ad8;
+        width: 30px;
+        height: 30px;
+        line-height: 50px;
+        border-radius: 50%;
+        border: solid 2px #668ad8;
+        overflow: hidden;
+        position: relative;
+        left: 10px;
+        bottom: 5px;
+    }
+    .background{
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        width: 100%;
+        background-color: #E5E5E5;
+    }
+}   
 
 hr.line{
     margin: 0;
 }
 
-.background{
-    margin-left: auto;
-    margin-right: auto;
-	height: 1000px;
-    width: 700px;
-    background-color: #E5E5E5;
-    
-}
 
 
 .schedule-title{
     /*color: black;*/
     position: relative;
     left: 2%;
-    height: 50px;
     margin: 10px;
 }
-
-.schedule-name{
-    width: 80%; /*親要素半分*/
-    padding: 10px 20px; /*ボックスを大きくする*/
-    font-size: 16px;
-    border-radius: 3px; /*ボックス角の丸み*/
+@media screen and (min-width: 481px){
+    .schedule-name {
+        background-color: #ffffff;
+        border: none;
+        border-bottom: solid 1px #000000;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        font-size: 20px;
+        width: 80%;
+    }
+    .template{
+        width: 730px;
+        padding: 10px 20px;
+    }
     
-    border-style: solid; 
-    border-color: #ccc;
-    border-bottom: 2px solid #f7f7f7;
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
-    position:relative;
-    display: inline-flex;
-    justify-content: center;
+    .template select{    
+        background-color: #ffffff;
+        border: none;
+        border-bottom: solid 1px #000000;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        font-size: 20px;
+        text-align: center;
+        width: 60%;
+    }
     
-}
-
-.template{
-    width: 730px;
-    padding: 10px 20px;
-    margin:5em auto;
-    position:5em auto;  
-}
-
-.template select{    
-    width:60%;
-    padding:12px 20px;
-    font-size:16px;
-    border-radius:3px;
-    border-bottom: 2px solid #f7f7f7;    
-    background:#fff;
-    box-sizing: border-box;
-    position:relative;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.term {
-    display: inline-block;
-    width: 100%;
-    padding: 8px 10px;
-    /*border: none;*/
-    border-radius: 3px;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-
-
-
-
-.wrapper-term{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;        
-    justify-content: center;        /*中央揃え*/
+    .wrapper-text{
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        right: 100px;
+        margin-right: 30px;
+        margin-left: 50px;
+    }
     
-    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
-}
-
-.namisen{
-    height:180px;
-    display: grid;
-    place-items: center;
-}
-
-.wrapper-cancel-register{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;        
-    justify-content: center;        /*中央揃え*/
-    padding:10px 90px;
-    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
-}   
-
-.form-cansel-button {
-    display:inline-block;
-    background:#ffffff;
-    padding:10px 90px;
+    .wrapper-form{
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 600px;
+    }
     
-    color:rgb(138, 138, 138);
-    margin:5px;
-    border:1px solid;
-    cursor:pointer;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.form-register-button {
-    display:inline-block;
-    background:#ffbb00;
-    padding:10px 90px;
+    .date_text{
+        height:30px;
+    }
     
-    color:#fff;
-    margin:5px;
-    border:1px solid;
-    cursor:pointer;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-/****スマホ対応****/
-@media screen and (max-width: 480px) {
-   
-
-.title{
-	position: relative;
-	left:25%;
-}
-
-.front{
-    position: relative;
-    top: 5%;
-    left: 65%;
-    display: block;
-}
-.home {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    right: 10px;
-}
-
-.calendar {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    left: 10px;
-}
-
-.btn-circle-border-simple {
-    text-decoration: none;
-    color: #668ad8;
-    width: 30px;
-    height: 30px;
-    line-height: 50px;
-    border-radius: 50%;
-    border: solid 2px #668ad8;
-    overflow: hidden;
-    position: relative;
-    left: 20px;
-    bottom: 5px;
-  }
-
-hr.line{
-    margin: 0;
-}
-
-.background{
-    margin-left: auto;
-    margin-right: auto;
-	height: 1000px;
-    width: 700px;
-    background-color: #E5E5E5;
+    .wave{
+        position: relative;
+        bottom: 15px;
+    }
     
-}
-
-
-.schedule-title{
-    /*color: black;*/
-    position: relative;
-    left: 2%;
-    height: 50px;
-    margin: 10px;
-}
-
-.schedule-name{
-    width: 80%; /*親要素半分*/
-    padding: 10px 20px; /*ボックスを大きくする*/
-    font-size: 16px;
-    border-radius: 3px; /*ボックス角の丸み*/
+    .wrapper-cancel-register{
+        text-align: center;
+    }
     
-    border-style: solid; 
-    border-color: #ccc;
-    border-bottom: 2px solid #f7f7f7;
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
-    position:relative;
-    display: inline-flex;
-    justify-content: center;
+    .form-cancel-button {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        background-color: white;
+        width: 230px;
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        padding: 15px 0;
+        text-align: center;
+    }
     
+    .form-register-button{
+        border: none;
+        position: relative;
+        border-radius:5px;
+        margin: 20px;
+        width: 230px;
+        height: 50px;
+        background-color: #EDAD0B;
+        color: white; 
+    }
 }
 
-.template{
-    width: 730px;
-    padding: 5px 10px;
-    margin:5em auto;
-    position:5em auto;  
-}
-
-.template select{    
-    width:50%;
-    padding:12px 20px;
-    font-size:16px;
-    border-radius:3px;
-    border-bottom: 2px solid #f7f7f7;    
-    background:#fff;
-    box-sizing: border-box;
-    position:relative;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.term {
-    display: inline-block;
-    width: 50%;
-   
-    padding: 8px 10px;
-    /*border: none;*/
-    border-radius: 3px;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-
-
-
-
-.wrapper-term{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: block;        
-    justify-content: center;        /*中央揃え*/
+@media screen and (max-width: 480px){
+    .schedule-name {
+        background-color: #ffffff;
+        border: none;
+        border-bottom: solid 1px #000000;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        font-size: 20px;
+        width: 70%;
+    }
+    .template{
+        width: 90%;
+        padding: 10px 20px;
+    }
     
-    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
-}
-
-.namisen{
-    height:180px;
-    display: grid;
-    place-items: center;
-}
-
-.wrapper-cancel-register{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;        
-    justify-content: center;        /*中央揃え*/
-    padding:10px 90px;
-    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
-}   
-
-.form-cancel-button {
-    display:inline-block;
-    background:#ffffff;
-    padding:10px 90px;
+    .template select{    
+        background-color: #ffffff;
+        border: none;
+        border-bottom: solid 1px #000000;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        font-size: 20px;
+        text-align: center;
+        width: 75%;
+    }
     
-    color:rgb(138, 138, 138);
-    margin:5px;
-    border:1px solid;
-    cursor:pointer;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.form-register-button {
-    display:inline-block;
-    background:#ffbb00;
-    padding:10px 90px;
+    .wrapper-text{
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        right: 30px;
+        margin-right: 80px;
+    }
     
-    color:#fff;
-    margin:5px;
-    border:1px solid;
-    cursor:pointer;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    .wrapper-form{
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 80%;
+    }
+    
+    .date_text{
+        height:30px;
+    }
+    
+    .wave{
+        position: relative;
+        bottom: 15px;
+    }
+    
+    .wrapper-cancel-register{
+        text-align: center;
+    }
+    
+    .form-cancel-button {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        background-color: white;
+        width: 180px;
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        padding: 15px 0;
+        text-align: center;
+        right: 10%;
+    }
+    
+    .form-register-button{
+        border: none;
+        position: relative;
+        border-radius:5px;
+        margin: 20px;
+        width: 180px;
+        height: 50px;
+        background-color: #EDAD0B;
+        color: white; 
+        right: 10%;
+    }
 }
-
-}
-
-
-
-
