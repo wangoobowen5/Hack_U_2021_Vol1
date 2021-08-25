@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
     // 本来はデータベースから初期値を取ってくる
     $begin_time = "09:00";
@@ -6,17 +5,16 @@
 
     // user.php内の更新ボタンが押された場合の処理
     // データベースに保存する機能も必要
-    if ($_POST["begin-time"] and $_POST["end-time"]) {
+    if ($_POST["userid"] and $_POST["begin-time"] and $_POST["end-time"]) {
+        $userid = $_POST["useid"];
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
 
         // 無事にデータベースを更新できた場合に表示
-        $update_text = "更新しました！";
+        $update_text = "保存しました！";
     }
 ?>
 
-=======
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -24,7 +22,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
@@ -32,28 +29,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.js"></script>
     <title>ユーザー設定</title>
-=======
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-    <title>Document</title>
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
 </head>
 <body>
     <header>
         <div class="header-rapper common-rapper">
             <div class="title">
-<<<<<<< HEAD
                 <h1><a href="./index.php" class="title-link">ラクスケ</a></h1>
             </div>
             <nav>
                 <a href="./index.php" class="home nav-link">ホーム</a>
-=======
-                <h1><a href="./index.html" class="title-link">ラクスケ</a></h1>
-            </div>
-            <nav>
-                <a href="./index.html" class="home nav-link">ホーム</a>
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
                 <a href="./template.php" class="calendar nav-link">テンプレート</a>
                 <a href="./user.php" class="btn-circle-border-simple nav-link"></a>
             </nav>
@@ -67,24 +51,17 @@
                     <div class="btn-circle-border-simple"></div>
                     <h1 class="user-name">ユーザー名</h1>
                 </div>
-<<<<<<< HEAD
                 <p><button class="logout-button common-button" id="logout-button">ログアウト</button></p>
             </div>
-            <form class="main-content" method="post" action="user.php">
-=======
-                <p><button class="logout-button common-button">ログアウト</button></p>
-            </div>
             <div class="main-content">
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
                 <div class="schedule-area flex">
                     <div class="schedule-description">
                         <h2 class="schedule-title">予定を追加しても良い時間</h2>
                         <p class="schedule-text">入力した時間内に自動で予定を追加します。</p>
                     </div>
-<<<<<<< HEAD
                     <div class="update-area">
                         <p class="update-text"><?= $update_text ?></p>
-                        <p class="update-p"><input type="submit" value="更新" class="schedule-update-button common-button"></input></p>
+                        <p class="update-p"><button id="schedule-update-button" class="schedule-update-button common-button">保存</button></p>
                     </div>
                 </div>
                 <div class="schedule-time flex">
@@ -100,31 +77,11 @@
                         <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?= $end_time ?>></p>
                     </div>
                 </div>
-            </form>
-=======
-                    <p><button class="schedule-update-button common-button">更新</button></p>
-                </div>
-                <div class="schedule-time flex">
-                    <div class="begin flex">
-                        <h2 class="begin-text">何時から</h2>
-                        <div class="begin-input time-input"></div>
-                    </div>
-                    <h2>〜</h2>
-                    <div class="end flex">
-                        <h2 class="end-text">何時まで</h2>
-                        <div class="end-input time-input"></div>
-                    </div>
-                </div>
             </div>
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
         </div>
     </main>
 
     <script src="./script/firebase.js" type="module"></script>
-<<<<<<< HEAD
     <script src="./script/user.js" type="module"></script>
-=======
-    <script src="./script/index.js" type="module"></script>
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
 </body>
 </html>

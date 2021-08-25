@@ -20,15 +20,9 @@
                 <h1><a href="./index.php" class="title-link">ラクスケ</a></h1>
             </div>
             <nav>
-<<<<<<< HEAD:dist/index.php
                 <a href="./index.php" class="home nav-link">ホーム</a>
                 <a href="./template.php" class="calendar nav-link">テンプレート</a>
                 <a href="./user.php" class="btn-circle-border-simple nav-link"></a>
-=======
-                <a href="./index.html" class="home nav-link">ホーム</a>
-                <a href="./template.php" class="calendar nav-link">テンプレート</a>
-                <a href="./user.html" class="btn-circle-border-simple nav-link"></a>
->>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e:dist/index.html
             </nav>
         </div>
     </header>

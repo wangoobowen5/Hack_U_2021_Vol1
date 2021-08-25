@@ -114,7 +114,7 @@ hr.line{
         height: 800px;
         /*overflow: scroll;*/
     }
- }
+}
 
 @media screen and (min-width: 481px){ 
     .template{

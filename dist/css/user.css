@@ -140,6 +140,10 @@ main {
   margin-top: 0;
 }
 
+.begin, .end {
+  margin: 0 40px;
+}
+
 /* 以下スマホ */
 @media screen and (max-width: 480px) {
   .common-rapper {
@@ -166,7 +170,7 @@ main {
   }
 
   .user-name {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 0;
   }
 
@@ -178,11 +182,17 @@ main {
     display: none;
   }
 
+  .begin, .end {
+    margin: 0 10px;
+  }
+
   .begin-text, .end-text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .time-input {
     margin-left: 5px;
+    width: 100px;
+    height: 35px;
   }
 }
