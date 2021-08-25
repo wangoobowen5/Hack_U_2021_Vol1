@@ -1,10 +1,22 @@
+<?php
+    $startDate = $_GET['date'];
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/schedule_form.css">
-        <title>ラクスケ</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>予定登録</title>
     </head>
     
     <body>
@@ -22,47 +34,45 @@
         <div class="background">
             <br>
 
-            <form action="./index.php" method="post">
-                <div class="schedule-title">
-                    <h3 style="display:inline;">予定登録</h3><br>
-                    <input type="text" id="" name="schedule-name" placeholder="タイトル" class="schedule-name"/>
-                </div>
+            <div class="schedule-title">
+                <h3 style="display:inline;">予定登録</h3><br>
+                <input type="text" id="schedule-name" name="schedule-name" placeholder="タイトル" class="schedule-name">
+            </div>
 
-                <div class="template">
-                    <h3 style="display:inline;">テンプレート</h3> 
-                    <select name="template-list">
-                        <option value="" hiden>テンプレートを選択</option>
-                        <option value="hung-out">遊びの計画</option>
-                        <option value="report">レポート</option>
-                        <option value="presentation">プレゼン準備</option>
-                        <option value="time-keeper">会議のタイムキーパー</option>                    
-                    </select>          
+            <div class="template">
+                <h3 style="display:inline;">テンプレート</h3> 
+                <select id="template-list" name="template-list">
+                    <option value="" hiden>テンプレートを選択</option>
+                    <option value="hung-out">遊びの計画</option>
+                    <option value="report">レポート</option>
+                    <option value="presentation">プレゼン準備</option>
+                    <option value="time-keeper">会議のタイムキーパー</option>                    
+                </select>          
+            </div>
+            <div class="wrapper-term">
+                <div class="term-begining">
+                    <p><h4>いつから</h4></p>
+                    <input type="text" id="start-date" value=<?= $startDate ?>>             
                 </div>
-                <div class="wrapper-term">
-                    <div class="term-begining">
-                        <p><h4>いつから</h4></p>
-                        <input type="text" id="flatpickr">             
-                    </div>
-                    <div class="namisen"><h3>～</h3></div>
-                    <div class="term-end">
-                        <p><h4>いつまで</h4></p>
-                        <input type="text" id="flatpickr">             
-                    </div>
+                <div class="namisen"><h3>～</h3></div>
+                <div class="term-end">
+                    <p><h4>いつまで</h4></p>
+                    <input type="text" id="end-date">             
                 </div>
-                <br>
-                <div class="wrapper-cancel-register">
-                    <button type="submit" class="form-cancel-button">キャンセル</button>
-                    <input type="submit" class="form-register-button">登録</input>
-                </div>
-            </form>
+            </div>
+            <br>
+            <div class="wrapper-cancel-register">
+                <p><a href="./index.php" class="form-cancel-button">キャンセル</a></p>
+                <p><button class="form-register-button" id="form-register-button">登録</button></p>
+            </div>
             
             <p>以下の内容が登録されます。</p>
             <p>・～～～～～～～～～～～～～：20%</p>
             <p>・～～～～～～～～～～～～～：30%</p>
             <p>・～～～～～～～～～～～～～：50%</p>  
-           
-            
-            
         </div>
+
+        <script src="./script/firebase.js" type="module"></script>
+        <script src="./script/schedule_form.js" type="module"></script>
     </body>
 </html>
