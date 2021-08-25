@@ -217,6 +217,22 @@ hr.line{
     }
 }
 
+<<<<<<< HEAD
+.btn_cancel {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: white;
+    width: 230px;
+    text-decoration: none;
+    color: black;
+    top: 100px;
+    margin: 20px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+=======
 .submit1{
     border: none;
     position: relative;
@@ -228,6 +244,7 @@ hr.line{
     background-color: white;
     color: black;  
 }
+>>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
 .submit2{
     border: none;
     position: relative;

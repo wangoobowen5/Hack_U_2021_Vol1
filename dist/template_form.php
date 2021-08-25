@@ -40,11 +40,10 @@
                     <p class="task_sum">タスクの割合は合計で100%にしてください</p>
                 </div>
                 <div class="template">
-                    <input type="reset" value="キャンセル" class="submit1">
+                    <a href="./template.php" class="btn_cancel">キャンセル</a>
                     <input type="submit" value="登録" class="submit2">
                 </div>
             </form>
-
         </div>
     </body>
 
