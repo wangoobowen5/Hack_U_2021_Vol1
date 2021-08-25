@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/schedule_form_ver2.css">
+        <link rel="stylesheet" href="./css/schedule_form.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
