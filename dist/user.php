@@ -1,19 +1,38 @@
 <?php
-    // 本来はデータベースから初期値を取ってくる
-    $begin_time = "09:00";
+    $begin_time = "08:00";
     $end_time = "21:00";
-
-    // user.php内の更新ボタンが押された場合の処理
-    // データベースに保存する機能も必要
-    if ($_POST["userid"] and $_POST["begin-time"] and $_POST["end-time"]) {
-        $userid = $_POST["useid"];
+    $userid = $_POST["begin-time"];
+    if (isset($_POST["begin-time"]) and isset($_POST["end-time"])){
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
+        try{
+            $dsn = 'mysql:dbname=bislab_db;host=localhost';
+            $user = 'root';
+            $password = '';
+            $dbh = new PDO($dsn, $user, $password); //データベースに接続
+            $dbh->query('SET NAMES utf8'); //文字コードのための設定
+            $sql2 = "SELECT userid,begin,end  FROM usertbl WHERE userid='".$userid."'";
+            $stmt = $dbh->prepare($sql2);
+		    $stmt->execute();
 
-        // 無事にデータベースを更新できた場合に表示
-        $update_text = "保存しました！";
+		    $sql3 = "UPDATE usertbl set begin = '".$begin_time."' WHERE userid='".$userid."'";
+		    $stmt = $dbh->prepare($sql3);
+		    $stmt->execute();
+
+		    $sql4 = "UPDATE usertbl set end = '".$end_time."' WHERE userid='".$userid."' ";
+		    $stmt = $dbh->prepare($sql4);
+		    $stmt->execute();
+            $dbh = null; //データベースから切断
+
+            $update_text = "保存しました！";
+        }
+        catch(Exception $e){
+            print 'サーバが停止しておりますので暫くお待ちください。';
+            exit();
+        }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ja">
