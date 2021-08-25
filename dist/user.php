@@ -66,13 +66,15 @@
                 </div>
                 <div class="schedule-time flex">
                     <div class="begin flex">
-                        <h2 class="begin-text">何時から</h2>
-                        <div class="begin-input time-input"></div>
+                        <h2 class="begin-text">開始</h2>
+                        <!-- PHPで開始時間の初期値を入れる -->
+                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?= $begin_time ?>></p>
                     </div>
-                    <h2>〜</h2>
+                    <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
-                        <h2 class="end-text">何時まで</h2>
-                        <div class="end-input time-input"></div>
+                        <h2 class="end-text">終了</h2>
+                        <!-- PHPで開始時間の初期値を入れる -->
+                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?= $end_time ?>></p>
                     </div>
                 </div>
             </div>
