@@ -14,27 +14,12 @@
 
 </head>
 <body>
-    <div id="firebaseui-auth-container"></div>
-    <script src="./script/firebase.js" type="module"></script>
     <h1>ラクスケ</h1>
-
     <div class="formwrapper">
         <h2>ログイン</h2>
-        <form action="" method="post">
-            <div class="setting">
-                <input type="text" id="username" name="username" placeholder="ユーザーネーム" class="text_login">
-            </div>
-
-            <div class="setting">
-                <input type="password" id="passward" name="passward" placeholder="パスワード" class="text_login">
-            </div>    
-
-            <div class="setting">
-                <input type="submit" value="ログイン" class="login_button">
-            </div>
-            <p><a href="#">新規登録</a></p>
-            <p><a href="#">パスワード忘れたかい?</a></p>
-        </form>
+        <div id="firebaseui-auth-container"></div>
     </div>
+    <div id="loader">Loading...</div>
+    <script src="./script/firebase.js" type="module"></script>
 </body>
 </html>

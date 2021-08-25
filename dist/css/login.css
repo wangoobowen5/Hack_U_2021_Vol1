@@ -1,12 +1,8 @@
 body {
     background: #e9e9e9;
     color: #5E5E5E;
-  }
-
-h1{
     text-align: center;
-}
-
+  }
 
 .formwrapper {
     background: white;
@@ -15,24 +11,3 @@ h1{
     max-width: 370px;
     text-align: center;
   }
-
-.setting{
-    margin: 20px;
-}
-
-.text_login{
-    height: 20px;
-    font-size: 15px;
-    border: none;
-    border-bottom: solid 1px #000000;
-}
-
-.login_button{
-    width: 100px;
-    height: 40px;
-    background-color: aqua;
-    border-radius: 5px;
-    color: black;
-    border: 0;
-    box-shadow: 0 0 2px;
-}
