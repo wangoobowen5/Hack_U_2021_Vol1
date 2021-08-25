@@ -10,11 +10,31 @@
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="./css/login.css">
+
 </head>
 <body>
-    <h1>Welcome to My Awesome App</h1>
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
     <script src="./script/firebase.js" type="module"></script>
+    <h1>ラクスケ</h1>
+
+    <div class="formwrapper">
+        <h2>ログイン</h2>
+        <form action="" method="post">
+            <div class="setting">
+                <input type="text" id="username" name="username" placeholder="ユーザーネーム" class="text_login">
+            </div>
+
+            <div class="setting">
+                <input type="password" id="passward" name="passward" placeholder="パスワード" class="text_login">
+            </div>    
+
+            <div class="setting">
+                <input type="submit" value="ログイン" class="login_button">
+            </div>
+            <p><a href="#">新規登録</a></p>
+            <p><a href="#">パスワード忘れたかい?</a></p>
+        </form>
+    </div>
 </body>
 </html>
