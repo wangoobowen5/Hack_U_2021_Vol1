@@ -13,9 +13,15 @@
 		</div>
 
         <div class="front">
+<<<<<<< HEAD
             <a href="./index.php" class="home">ホーム</a>
             <a href="./template.php" class="calendar">テンプレート</a>
             <a href="./user.php" class="btn-circle-border-simple"></a>
+=======
+            <a href="./index.html" class="home">ホーム</a>
+            <a href="./template.php" class="calendar">テンプレート</a>
+            <a href="./user.html" class="btn-circle-border-simple"></a>
+>>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
         </div>
         <hr color="black" class="line">
 
@@ -40,10 +46,18 @@
                     <p class="task_sum">タスクの割合は合計で100%にしてください</p>
                 </div>
                 <div class="template">
+<<<<<<< HEAD
                     <a href="./template.php" class="btn_cancel">キャンセル</a>
                     <input type="submit" value="登録" class="submit2">
                 </div>
             </form>
+=======
+                    <input type="reset" value="キャンセル" class="submit1">
+                    <input type="submit" value="登録" class="submit2">
+                </div>
+            </form>
+
+>>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
         </div>
     </body>
 

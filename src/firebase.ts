@@ -20,7 +20,10 @@ const uiConfig = {
     ],
 };
 
+<<<<<<< HEAD
 // loginページの場合のみFirebase Auth を表示
+=======
+>>>>>>> 74a70e0a91bc3a9ed280c03ccdad20a882140f8e
 if (location.pathname === '/Hack_U_2021_Vol1/dist/login.php') {
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
   ui.start('#firebaseui-auth-container', uiConfig);
