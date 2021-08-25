@@ -35,12 +35,13 @@
             <br>
 
             <div class="schedule-title">
-                <h3 style="display:inline;">予定登録</h3><br>
+                <h3>予定の登録</h3>
+                <br>
                 <input type="text" id="schedule-name" name="schedule-name" placeholder="タイトル" class="schedule-name">
             </div>
 
             <div class="template">
-                <h3 style="display:inline;">テンプレート</h3> 
+                <h3>テンプレート</h3> 
                 <select id="template-list" name="template-list">
                     <option value="" hiden>テンプレートを選択</option>
                     <option value="hung-out">遊びの計画</option>
@@ -49,21 +50,20 @@
                     <option value="time-keeper">会議のタイムキーパー</option>                    
                 </select>          
             </div>
-            <div class="wrapper-term">
-                <div class="term-begining">
-                    <p><h4>いつから</h4></p>
-                    <input type="text" id="start-date" value=<?= $startDate ?>>             
-                </div>
-                <div class="namisen"><h3>～</h3></div>
-                <div class="term-end">
-                    <p><h4>いつまで</h4></p>
-                    <input type="text" id="end-date">             
-                </div>
+            <div class="wrapper-text">
+                <h4>いつから</h4>
+                <h4></h4>
+                <h4>いつまで</h4>
             </div>
+            <div class="wrapper-form">
+                <input type="text" id="start-date" class="date_text" value=<?= $startDate ?>>  
+                <div class="wave"><h4>〜</h4></div>
+                <input type="text" id="end-date" class="date_text"> 
+            </div>            
             <br>
             <div class="wrapper-cancel-register">
-                <p><a href="./index.php" class="form-cancel-button">キャンセル</a></p>
-                <p><button class="form-register-button" id="form-register-button">登録</button></p>
+                <a href="./index.php" class="form-cancel-button">キャンセル</a>
+                <button class="form-register-button" id="form-register-button">登録</button>
             </div>
             
             <p>以下の内容が登録されます。</p>
