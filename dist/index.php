@@ -35,3 +35,34 @@
     <script src="./script/index.js" type="module"></script>
 </body>
 </html>
+
+
+<?php
+$userid = $_POST['userid'];
+try {
+    $dsn = 'mysql:dbname=bislab_db;host=localhost';
+    $user = 'root';
+    $password = '';
+    $dbh = new PDO($dsn, $user, $password); //データベースに接続
+    $dbh->query('SET NAMES utf8'); //文字コードのための設定
+    $sql = "SELECT userid FROM usertbl WHERE userid='".$userid."'";
+
+    $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            if($stmt->fetch(PDO::FETCH_BOTH)!=false){
+                $a = 0;
+            }
+            else{
+                $sql = "INSERT INTO usertbl (userid) values (?)";
+                $stmt = $dbh->prepare($sql);
+                $data[] = $userid;
+                $stmt->execute($data);
+            }
+            $dbh = null; //データベースから切断
+}
+catch(Exception $e){
+    print 'サーバが停止しておりますので暫くお待ちください。';
+    exit();
+}
+
+?>
