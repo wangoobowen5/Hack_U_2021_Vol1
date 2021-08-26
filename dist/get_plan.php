@@ -10,8 +10,7 @@
         "title" => "何でも相談会",
         "start" => "2021-08-19T13:00:00",
         "end" => "2021-08-19T17:00:00",
-        "color" => "#EDAD0B",
-        "userid" => $userid
+        "color" => "#EDAD0B"
     ),
     array(
         "title" => "ミーティング",

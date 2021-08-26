@@ -57,21 +57,3 @@ nav {
     margin: 40px auto;
     padding: 0 10px;
 }
-
-/*全て共通：hideエリアをはじめは非表示*/
-.hide-area{
-	display: none;
-}
-
-/*全て共通：モーダルのボタンの色を変更したい場合*/
-.modaal-close:after, 
-.modaal-close:before{
-	background:#ccc;	
-}
-
-.modaal-close:focus:after,
-.modaal-close:focus:before,
-.modaal-close:hover:after,
-.modaal-close:hover:before{
-	background:#666;
-}
