@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var modalContent = document.getElementById('modal-content');
     var buttonCancel = document.getElementById('button-cancel');
     var buttonClose = document.getElementById('button-close');
+    var buttonSave = document.getElementById('button-save');
     firebase.auth().onAuthStateChanged(function (user) {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -29,13 +30,28 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             // 予定を押した時の処理
             eventClick: function (info) {
-                console.log('Event: ' + info.event.title);
                 modal === null || modal === void 0 ? void 0 : modal.style.display = 'block';
+                var postData = {
+                    'planid': info.event.extendedProps.planid,
+                    'start': info.event.start,
+                    'end': info.event.end
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'get_plan_detail.php',
+                    data: postData,
+                    dataType: 'json'
+                })
+                    .then(function (data) {
+                    console.log('succes: ' + data['planid'] + data['start']);
+                }, function (error) {
+                    console.log('error');
+                });
             }
         });
         calendar.render();
     });
-    // キャンセルボタンを押したらモーダルを閉じる
+    // クローズボタン（×）を押したらモーダルを閉じる
     buttonClose === null || buttonClose === void 0 ? void 0 : buttonClose.addEventListener('click', function () {
         modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
@@ -48,5 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.target == modalContent) {
             modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
         }
+    }, false);
+    // 保存ボタンを押したらajaxでPOSTしてモーダルを閉じる
+    buttonSave === null || buttonSave === void 0 ? void 0 : buttonSave.addEventListener('click', function () {
+        modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
 });

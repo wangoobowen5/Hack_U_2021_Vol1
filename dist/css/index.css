@@ -60,7 +60,7 @@ nav {
 
 /* ここからモーダル */
 .modal {
-  /* display: none; */
+  display: none;
   position: fixed;
   z-index: 2;
   left: 0;

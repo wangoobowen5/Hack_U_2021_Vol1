@@ -30,8 +30,26 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             // 予定を押した時の処理
             eventClick: function(info) {
-                console.log('Event: ' + info.event.title);
                 modal?.style.display = 'block';
+                let postData = {
+                    'planid': info.event.extendedProps.planid,
+                    'start': info.event.start,
+                    'end': info.event.end
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'get_plan_detail.php',
+                    data: postData,
+                    dataType: 'json'
+                })
+                .then(
+                    data => {  // Ajax成功時の処理
+                        console.log('succes: ' + data['planid'] + data['start']);
+                    },
+                    error => {  // Ajax失敗時の処理
+                        console.log('error');
+                    }
+                )
             }
         });
         calendar.render();
