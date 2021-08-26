@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         eventTimeFormat: { hour: 'numeric', minute: '2-digit' },
         editable: true,
         events: {
-            url: './myfeed.php',
+            url: './get_plan.php',
             method: 'POST',
             failure: function () {
                 console.error('there was an error while fetching events!');

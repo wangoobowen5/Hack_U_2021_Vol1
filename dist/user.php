@@ -1,7 +1,7 @@
 <?php
     $begin_time = "08:00";
     $end_time = "21:00";
-    $userid = $_POST["begin-time"];
+    $userid = $_POST["userid"];
     if (isset($_POST["begin-time"]) and isset($_POST["end-time"])){
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
