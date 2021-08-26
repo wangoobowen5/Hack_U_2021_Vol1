@@ -31,8 +31,62 @@
     <div id="modal" class="modal">
         <div id="modal-content" class="modal-content">
             <div class="modal-body">
-                <h1>hello</h1>
-                <p><button id="button-close">キャンセル</button></p>
+                <div class="modal-rappar flex-column">
+                    <section class="modal-menu modal-section flex-row">
+                        <p class="modal-menu-left"><button id="button-close">×</button></p>
+                        <div class="modal-menu-right flex-row">
+                            <p><button id="button-edit"><img src="./image/edit.png" alt="edit"></button></p>
+                            <p><button id="button-edit"><img src="./image/basket.png" alt="basket"></button></p>
+                        </div>
+                    </section>
+                    <section class="modal-section flex-column">
+                        <h2>HackUプレゼン</h2>
+                        <p>8/27（金）13:00 ~ 15:00</p>
+                    </section>
+                    <section class="modal-section flex-column">
+                        <h3>今日の目標</h3>
+                        <div class="flex-column">
+                            <div class="flex-row">
+                                <p>スライド作成</p>
+                                <p><span>10</span>%</p>
+                            </div>
+                            <div class="flex-row">
+                                <p>発表練習</p>
+                                <p><span>20</span>%</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="modal-section flex-column">
+                        <h3>進捗</h3>
+                        <div>
+                            <div class="flex-row">
+                                <p>内容箇条書き</p>
+                                <div class="flex-row">
+                                <p><input type="text"></p>
+                                    <p>/ 20%</p>
+                                </div>
+                            </div>
+                            <div class="flex-row">
+                                <p>スライド作成</p>
+                                <div class="flex-row">
+                                <p><input type="text"></p>
+                                    <p>/ 50%</p>
+                                </div>
+                            </div>
+                            <div class="flex-row">
+                                <p>発表練習</p>
+                                <div class="flex-row">
+                                <p><input type="text"></p>
+                                    <p>/ 20%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="modal-buttons modal-section flex-row">
+                        <p><button id="button-cancel">キャンセル</button></p>
+                        <p><button id="button-save">保存</button></p>
+                    </section>
+                </div>
             </div>
         </div>
     </div>

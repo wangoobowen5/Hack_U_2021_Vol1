@@ -60,7 +60,7 @@ nav {
 
 /* ここからモーダル */
 .modal {
-  display: none;
+  /* display: none; */
   position: fixed;
   z-index: 2;
   left: 0;
@@ -83,4 +83,21 @@ nav {
   background-color: #ffffff;
   width: 700px;
   height: 700px;
+}
+
+.modal-rappar {
+  width: 600px;
+  margin: 50px auto;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
