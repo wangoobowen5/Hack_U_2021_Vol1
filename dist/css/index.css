@@ -75,15 +75,3 @@ nav {
 .modaal-close:hover:before{
 	background:#666;
 }
-
-/*確認を促すモーダル：タイトルの色を変更したい場合*/
-#modaal-title{
-	font-size:1.2rem;
-	text-align: center;
-	margin: 0 0 20px 0;
-}
-
-/*動画表示のモーダル：余白を変更したい場合*/
-.modaal-video .modaal-inner-wrapper{
-	padding:0;
-}
