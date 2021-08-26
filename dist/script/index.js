@@ -47,4 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     calendar.render();
+    $(".info").modaal({
+        overlay_close: true,
+        before_open: function () {
+            $('html').css('overflow-y', 'hidden'); /*縦スクロールバーを出さない*/
+        },
+        after_close: function () {
+            $('html').css('overflow-y', 'scroll'); /*縦スクロールバーを出す*/
+        }
+    });
 });
