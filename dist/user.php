@@ -1,7 +1,27 @@
 <?php
-    $begin_time = "08:00";
-    $end_time = "21:00";
-    $userid = $_POST["begin-time"];
+    $userid = $_POST["userid"];
+    var_dump($userid);
+    $userid = '45nrDIa93rW9DqE21plfuIjLQhv2';
+
+    try{
+        $dsn = 'mysql:dbname=bislab_db;host=localhost';
+        $user = 'root';
+        $password = '';
+        $dbh = new PDO($dsn, $user, $password); //データベースに接続
+        $dbh->query('SET NAMES utf8'); //文字コードのための設定
+        $sql1 = "SELECT begin,end  FROM usertbl WHERE userid = '".$userid."'";
+        $stmt = $dbh->prepare($sql1);
+        $stmt->execute();
+
+        $dbh = null; //データベースから切断
+    }
+    catch(Exception $e){
+        print 'サーバが停止しておりますので暫くお待ちください。';
+        exit();
+    }
+    $rec = $stmt->fetch(PDO::FETCH_BOTH);
+    var_dump($rec);
+
     if (isset($_POST["begin-time"]) and isset($_POST["end-time"])){
         $begin_time = $_POST["begin-time"];
         $end_time = $_POST["end-time"];
@@ -87,13 +107,13 @@
                     <div class="begin flex">
                         <h2 class="begin-text">開始</h2>
                         <!-- PHPで開始時間の初期値を入れる -->
-                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?= $begin_time ?>></p>
+                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?php print $rec["begin"] ?>></p>
                     </div>
                     <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
                         <h2 class="end-text">終了</h2>
                         <!-- PHPで開始時間の初期値を入れる -->
-                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?= $end_time ?>></p>
+                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?php print $rec["end"]?>></p>
                     </div>
                 </div>
             </div>
