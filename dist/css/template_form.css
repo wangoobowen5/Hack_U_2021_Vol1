@@ -124,18 +124,7 @@ hr.line{
         height: 50px;
         margin: 10px;
     }
-    .btn_template {
-        font-family: sans-serif;
-        box-sizing: border-box;
-        font-size: 15px;
-        border-radius: 5px;
-        background-color: white;
-        padding: 10px;
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-        width: 400px;
-    }
+
 }
 
 @media screen and (max-width: 480px){ 
@@ -146,18 +135,7 @@ hr.line{
         height: 50px;
         margin: 10px;
     }
-    .btn_template {
-        font-family: sans-serif;
-        box-sizing: border-box;
-        font-size: 15px;
-        border-radius: 5px;
-        background-color: white;
-        padding: 10px;
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-        width: 250px;
-    }
+
 }
 
 .text_title{
@@ -217,28 +195,65 @@ hr.line{
     }
 }
 
-.btn_cancel {
-    position: relative;
-    display: inline-block;
-    border-radius: 5px;
-    background-color: white;
-    width: 230px;
-    text-decoration: none;
-    color: black;
-    top: 100px;
-    margin: 20px;
-    padding: 15px 0;
-    text-align: center;
+.btn_position{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.submit{
-    border: none;
-    position: relative;
-    border-radius:5px;
-    margin: 20px;
-    top: 100px;
-    width: 230px;
-    height: 50px;
-    background-color: #EDAD0B;
-    color: white; 
+@media screen and (min-width: 481px){
+    .btn_cancel {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        background-color: white;
+        width: 230px;
+        text-decoration: none;
+        color: black;
+        top: 100px;
+        margin: 20px;
+        padding: 15px 0;
+        text-align: center;
+    }
+    
+    .submit{
+        border: none;
+        position: relative;
+        border-radius:5px;
+        margin: 20px;
+        top: 100px;
+        width: 230px;
+        height: 50px;
+        background-color: #EDAD0B;
+        color: white; 
+    }
+}
+
+@media screen and (max-width: 480px){
+    .btn_cancel {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        background-color: white;
+        width: 100px;
+        text-decoration: none;
+        color: black;
+        top: 100px;
+        margin: 20px;
+        padding: 15px 0;
+        text-align: center;
+        right: 20px;
+    }
+    
+    .submit{
+        border: none;
+        position: relative;
+        border-radius:5px;
+        margin: 20px;
+        top: 100px;
+        width: 100px;
+        height: 50px;
+        background-color: #EDAD0B;
+        color: white; 
+        right: 20px;
+    }
 }
