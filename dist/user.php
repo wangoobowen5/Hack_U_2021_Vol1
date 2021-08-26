@@ -1,7 +1,11 @@
-<?php
+<?php   
+    $refresh_flag = false;
+    if (isset($_POST["userid"])){
+        $userid = $_POST["userid"];
+    }else{
+        $refresh_flag = true;
+    }
     $userid = $_POST["userid"];
-    var_dump($userid);
-    $userid = '45nrDIa93rW9DqE21plfuIjLQhv2';
 
     try{
         $dsn = 'mysql:dbname=bislab_db;host=localhost';
@@ -20,7 +24,16 @@
         exit();
     }
     $rec = $stmt->fetch(PDO::FETCH_BOTH);
-    var_dump($rec);
+    $html_begin_time = $rec['begin'];
+    $html_end_time = $rec['end'];
+
+    if (isset($_POST["begin-time"])){
+        $html_begin_time = $_POST["begin-time"];
+    }
+
+    if (isset($_POST["end-time"])){
+        $html_end_time = $_POST["end-time"];
+    }
 
     if (isset($_POST["begin-time"]) and isset($_POST["end-time"])){
         $begin_time = $_POST["begin-time"];
@@ -107,13 +120,13 @@
                     <div class="begin flex">
                         <h2 class="begin-text">開始</h2>
                         <!-- PHPで開始時間の初期値を入れる -->
-                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?php print $rec["begin"] ?>></p>
+                        <p><input type="text" id="begin-time" name="begin-time" class="time-input" value=<?php print $html_begin_time ?>></p>
                     </div>
                     <h2 class="schedule-tilde">〜</h2>
                     <div class="end flex">
                         <h2 class="end-text">終了</h2>
                         <!-- PHPで開始時間の初期値を入れる -->
-                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?php print $rec["end"]?>></p>
+                        <p><input type="text" id="end-time" name="end-time" class="time-input" value=<?php print $html_end_time?>></p>
                     </div>
                 </div>
             </div>
@@ -122,5 +135,38 @@
 
     <script src="./script/firebase.js" type="module"></script>
     <script src="./script/user.js" type="module"></script>
+    <script type="text/javascript">
+
+    function post(path, params, method) {
+    if (method === void 0) { method = 'post'; }
+    var form = document.createElement('form');
+    form.method = method;
+    form.action = path;
+    for (var key in params) {
+        if (params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = key;
+            hiddenField.value = params[key];
+            form.appendChild(hiddenField);
+        }
+    }
+    document.body.appendChild(form);
+    form.submit();
+    }
+
+    firebase.initializeApp(firebaseconfig);
+    </script>
+
+    <?php 
+    if ($refresh_flag == true){
+        echo '<script type="text/javascript">',
+        'firebase.auth().onAuthStateChanged(function (user) {        
+            var data = {"userid": user.uid,};        
+            post(\'/Hack_U_2021_Vol1/dist/user.php\', data);
+        })',
+        '</script>';
+    }
+    ?>
 </body>
 </html>
