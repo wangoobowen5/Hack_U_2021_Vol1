@@ -28,6 +28,15 @@
         </div>
     </header>
 
+    <div id="modal" class="modal">
+        <div id="modal-content" class="modal-content">
+            <div class="modal-body">
+                <h1>hello</h1>
+                <p><button id="button-close">キャンセル</button></p>
+            </div>
+        </div>
+    </div>
+
     <main>
         <div id="calendar" class="common-rapper"></div>
     </main>

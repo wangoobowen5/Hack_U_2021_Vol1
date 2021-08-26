@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeButton = document.getElementById('button-close');
+
     firebase.auth().onAuthStateChanged(function (user) {
         const calendarEl = document.getElementById('calendar');
         const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -22,8 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             eventClick: function(info) {
                 console.log('Event: ' + info.event.title);
+                modal?.style.display = 'block';
             }
         });
         calendar.render();
     })
+
+    closeButton?.addEventListener('click', () => {
+        modal?.style.display = 'none';
+    }, false);
+
+    window.addEventListener('click', e => {
+        console.log(e.target);
+        console.log(modalContent)
+        if (e.target == modalContent){
+            modal?.style.display = 'none';
+        }
+    }, false);
 });
