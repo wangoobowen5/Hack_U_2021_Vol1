@@ -1,46 +1,47 @@
 <?php
+// useridの追加
 $userid = $_POST["userid"];
-$scheduleName = $_POST["scheduleName"];
-$templateName = $_POST["templateName"];
-$start_date = $_POST["start-Date"];
-$end_date = $_POST["end-date"];
+$title = $_POST["title"];
+$templateid = $_POST["templateid"];
+$start_date = $_POST["start_date"];
+$end_date = $_POST["end_date"];
 
-try{
+try {
     $dsn = 'mysql:dbname=bislab_db;host=localhost';
     $user = 'root';
     $password = '';
     $dbh = new PDO($dsn, $user, $password); //データベースに接続
     $dbh->query('SET NAMES utf8'); //文字コードのための設定
-    $sql2 = "SELECT userid,begin,end  FROM usertbl WHERE userid='".$userid."'";
-    $stmt = $dbh->prepare($sql2);
-    $stmt->execute();
+    $sql1 = "SELECT userid FROM usertbl WHERE userid='".$userid."'";
 
-    $sql3 = "UPDATE usertbl set begin = '".$begin_time."' WHERE userid='".$userid."'";
-    $stmt = $dbh->prepare($sql3);
-    $stmt->execute();
+    $stmt = $dbh->prepare($sql1);
+            $stmt->execute();
+            if($stmt->fetch(PDO::FETCH_BOTH)!=false){
+                $a = 0;
+            }
+            else{
+                $sql = "INSERT INTO usertbl (userid) values (?)";
+                $stmt = $dbh->prepare($sql);
+                $data[] = $userid;
+                $stmt->execute($data);
+            }
 
-    $sql4 = "UPDATE usertbl set end = '".$end_time."' WHERE userid='".$userid."' ";
-    $stmt = $dbh->prepare($sql4);
-    $stmt->execute();
+            $sql2 = "INSERT INTO templatetbl (userid,title,templateid,start_date,end_date) values (?,?,?,?,?)";
+            $stmt = $dbh->prepare($sql2);
+            $data[] = $userid;
+            $data[] = $title;
+            $data[] = $templateid;
+            $data[] = $start_date;
+            $data[] = $end_date;
+            $stmt->execute($data);
+        
+
     $dbh = null; //データベースから切断
-
-    $update_text = "保存しました！";
 }
+
 catch(Exception $e){
     print 'サーバが停止しておりますので暫くお待ちください。';
     exit();
 }
-
-
 ?>
 
-
-
-var data = {
-                "userid": user.uid,
-                "scheduleName": scheduleName,
-                "templateName": templateName,
-                "start-date": startDate,
-                "end-date": endDate
-            };
-            post('/Hack_U_2021_Vol1/dist/index.php', data);
