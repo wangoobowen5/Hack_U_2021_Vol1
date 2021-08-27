@@ -80,14 +80,13 @@ nav {
 }
 
 .modal-body {
-  background-color: #ffffff;
-  width: 700px;
-  height: 700px;
-}
-
-.modal-rappar {
-  width: 600px;
-  margin: 50px auto;
+  background-color: #F8F8F8;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }
 
 .flex-row {
@@ -100,4 +99,65 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#modal-rappar {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.modal p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-menu-button {
+  width: 30px;
+  height: 30px;
+  background-color: #F8F8F8;
+  border: none;
+  padding: 0;
+  margin: 0 5px;
+  font-size: 30px;
+}
+
+.modal-menu-button img {
+  width: 25px;
+  height: 25px;
+}
+
+.modal-section h2, .modal-section h3, .modal-time{
+  text-align: center;
+}
+
+.progress {
+  margin-bottom: 5px;
+}
+
+.progress-input {
+  width: 50px;
+}
+
+.modal-buttons {
+  margin-top: 10px;
+}
+
+.modal-under-button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+}
+
+#button-save {
+  background-color: #EDAD0B;
+  color: #ffffff;
+}
+
+#button-cancel {
+  background-color: #ffffff;
 }
