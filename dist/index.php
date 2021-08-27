@@ -63,21 +63,21 @@
                                 <div class="flex-row progress">
                                     <p>内容箇条書き</p>
                                     <div class="flex-row">
-                                    <p><input type="text"  class="progress-input"></p>
+                                        <p><input type="text" class="progress-input"></p>
                                         <p> / 20%</p>
                                     </div>
                                 </div>
                                 <div class="flex-row progress">
                                     <p>スライド作成</p>
                                     <div class="flex-row">
-                                    <p><input type="text"></p>
+                                        <p><input type="text" class="progress-input"></p>
                                         <p> / 60%</p>
                                     </div>
                                 </div>
                                 <div class="flex-row progress">
                                     <p>発表練習</p>
                                     <div class="flex-row">
-                                    <p><input type="text"></p>
+                                        <p><input type="text" class="progress-input"></p>
                                         <p> / 20%</p>
                                     </div>
                                 </div>

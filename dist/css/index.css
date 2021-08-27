@@ -80,12 +80,13 @@ nav {
 }
 
 .modal-body {
-  background-color: #ffffff;
+  background-color: #F8F8F8;
   width: 500px;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 
 .flex-row {
@@ -115,11 +116,16 @@ nav {
 .modal-menu-button {
   width: 30px;
   height: 30px;
-  background-color: #ffffff;
+  background-color: #F8F8F8;
   border: none;
   padding: 0;
   margin: 0 5px;
   font-size: 30px;
+}
+
+.modal-menu-button img {
+  width: 25px;
+  height: 25px;
 }
 
 .modal-section h2, .modal-section h3, .modal-time{
@@ -128,4 +134,30 @@ nav {
 
 .progress {
   margin-bottom: 5px;
+}
+
+.progress-input {
+  width: 50px;
+}
+
+.modal-buttons {
+  margin-top: 10px;
+}
+
+.modal-under-button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+}
+
+#button-save {
+  background-color: #EDAD0B;
+  color: #ffffff;
+}
+
+#button-cancel {
+  background-color: #ffffff;
 }
