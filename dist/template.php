@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/template.css">
+        <link rel="icon" href="image/logo.svg" type="image/svg+xml">
         <title>ラクスケ</title>
     </head>
     
