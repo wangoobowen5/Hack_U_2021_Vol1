@@ -116,9 +116,23 @@ document.addEventListener('DOMContentLoaded', function () {
         modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
     function createModalElements(info, goal, progress, task) {
+        // 初期化
         initModal();
         modalTitle === null || modalTitle === void 0 ? void 0 : modalTitle.textContent = info.event.title;
         modalTime === null || modalTime === void 0 ? void 0 : modalTime.textContent = arrangeTime(info.event.start, info.event.end);
+        // 今日の目標
+        for (var _i = 0, goal_1 = goal; _i < goal_1.length; _i++) {
+            var i = goal_1[_i];
+            var modalGoalChild = document.createElement('div');
+            modalGoalChild.className = 'flex-row';
+            var modalGoalText = document.createElement('p');
+            var modalGoalRatio = document.createElement('p');
+            modalGoalText.textContent = i[0];
+            modalGoalRatio.textContent = i[1] + '%';
+            modalGoalChild.appendChild(modalGoalText);
+            modalGoalChild.appendChild(modalGoalRatio);
+            modalGoal === null || modalGoal === void 0 ? void 0 : modalGoal.appendChild(modalGoalChild);
+        }
     }
     function devideSentence(s) {
         var devideComma = s.split(',');
@@ -141,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function arrangeTime(start, end) {
         start = start.toString().split(' ');
         end = end.toString().split(' ');
-        console.log(start);
         var time = Month[start[1]] + '/' + start[2] + '(' + DoW[start[0]] + ') ';
         if (end) {
             time = time + start[4].slice(0, -3) + '〜' + end[4].slice(0, -3);

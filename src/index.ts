@@ -127,10 +127,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
     function createModalElements(info, goal, progress, task) {
+        // 初期化
         initModal();
         modalTitle?.textContent = info.event.title;
         modalTime?.textContent = arrangeTime(info.event.start, info.event.end);
-
+        // 今日の目標
+        for (let i of goal) {
+            const modalGoalChild = document.createElement('div');
+            modalGoalChild.className = 'flex-row';
+            const modalGoalText = document.createElement('p');
+            const modalGoalRatio = document.createElement('p');
+            modalGoalText.textContent = i[0];
+            modalGoalRatio.textContent = i[1] + '%';
+            modalGoalChild.appendChild(modalGoalText);
+            modalGoalChild.appendChild(modalGoalRatio);
+            modalGoal?.appendChild(modalGoalChild);
+        }
     }
 
     function devideSentence(s: string) {
