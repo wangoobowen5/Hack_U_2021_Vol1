@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 eventInfo = info;
                 modal?.style.display = 'block';
                 let planData = {
-                    'planid': info.event.extendedProps.planid
+                    'planid': info.event.extendedProps.planid,
+                    'date': info.event.start.toString()
                 };
                 $.ajax({
                     type: 'POST',
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(
                     data => {  // Ajax成功時の処理
-                        console.log('succes: ' + data['goal'] + data['progress'] + data['task']);
+                        console.log('succes');
                         const goal = devideSentence(data['goal']);
                         const progress = devideSentence(data['progress']);
                         const task = devideSentence(data['task']);
