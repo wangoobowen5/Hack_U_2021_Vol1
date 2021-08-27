@@ -36,18 +36,18 @@
                     <section class="modal-menu modal-section flex-row">
                         <p class="modal-menu-left"><button id="button-close" class="modal-menu-button">×</button></p>
                         <div class="modal-menu-right flex-row">
-                            <p><button id="button-edit" class="modal-menu-button"><img src="./image/edit.png" alt="edit"></button></p>
+                            <!-- <p><button id="button-edit" class="modal-menu-button"><img src="./image/edit.png" alt="edit"></button></p> -->
                             <p><button id="button-edit" class="modal-menu-button"><img src="./image/basket.png" alt="basket"></button></p>
                         </div>
                     </section>
                     <div class="flex-column modal-main">
                         <section class="modal-section flex-column">
-                            <h2>HackUプレゼン</h2>
-                            <p class="modal-time">8/27（金）13:00 ~ 15:00</p>
+                            <h2 id="modal-title">HackUプレゼン</h2>
+                            <p class="modal-time" id="modal-time">8/27（金）13:00 ~ 15:00</p>
                         </section>
                         <section class="modal-section flex-column">
-                            <h3>今日の目標</h3>
-                            <div class="flex-column">
+                            <h3>目標</h3>
+                            <div class="flex-column" id="modal-goal">
                                 <div class="flex-row">
                                     <p>スライド作成</p>
                                     <p><span>10</span>%</p>
@@ -60,7 +60,7 @@
                         </section>
                         <section class="modal-section flex-column">
                             <h3>進捗</h3>
-                            <div>
+                            <div id="modal-progress">
                                 <div class="flex-row progress">
                                     <p>内容箇条書き</p>
                                     <div class="flex-row">
@@ -84,11 +84,11 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="modal-buttons modal-section flex-row">
-                            <p><button id="button-cancel" class="modal-under-button">キャンセル</button></p>
-                            <p><button id="button-save" class="modal-under-button">保存</button></p>
-                        </section>
                     </div>
+                    <section class="modal-buttons modal-section flex-row">
+                        <p><button id="button-cancel" class="modal-under-button">キャンセル</button></p>
+                        <p><button id="button-save" class="modal-under-button">保存</button></p>
+                    </section>
                 </div>
             </div>
         </div>

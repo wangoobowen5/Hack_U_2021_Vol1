@@ -5,7 +5,34 @@ document.addEventListener('DOMContentLoaded', function () {
     var buttonCancel = document.getElementById('button-cancel');
     var buttonClose = document.getElementById('button-close');
     var buttonSave = document.getElementById('button-save');
+    var modalTitle = document.getElementById('modal-title');
+    var modalTime = document.getElementById('modal-time');
+    var modalGoal = document.getElementById('modal-goal');
+    var modalProgress = document.getElementById('modal-progress');
     var eventInfo;
+    var DoW = {
+        'Mon': '月',
+        'Tue': '火',
+        'Wed': '水',
+        'Thu': '木',
+        'Fri': '金',
+        'Sat': '土',
+        'Sun': '日'
+    };
+    var Month = {
+        'Jan': '1',
+        'Feb': '2',
+        'Mar': '3',
+        'Apr': '4',
+        'May': '5',
+        'Jun': '6',
+        'Jul': '7',
+        'Aug': '8',
+        'Sep': '9',
+        'Oct': '10',
+        'Nov': '11',
+        'Dec': '12'
+    };
     firebase.auth().onAuthStateChanged(function (user) {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -35,8 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modal === null || modal === void 0 ? void 0 : modal.style.display = 'block';
                 var planData = {
                     'planid': info.event.extendedProps.planid,
-                    'start': info.event.start,
-                    'end': info.event.end
+                    'date': info.event.start.toString()
                 };
                 $.ajax({
                     type: 'POST',
@@ -45,7 +71,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     dataType: 'json'
                 })
                     .then(function (data) {
-                    console.log('succes: ' + data['planid'] + data['start']);
+                    console.log('succes');
+                    var goal = devideSentence(data['goal']);
+                    progress = devideSentence(data['progress']);
+                    var task = devideSentence(data['task']);
+                    createModalElements(info, goal, progress, task);
                 }, function (error) {
                     console.log('error');
                 });
@@ -81,9 +111,77 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(function (data) {
             console.log('succes: ' + data['planid'] + " " + data['progress']);
+            modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
         }, function (error) {
-            console.log('error');
+            alert('error');
         });
-        modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
+    function createModalElements(info, goal, progress, task) {
+        // 初期化
+        initModal();
+        modalTitle === null || modalTitle === void 0 ? void 0 : modalTitle.textContent = info.event.title;
+        modalTime === null || modalTime === void 0 ? void 0 : modalTime.textContent = arrangeTime(info.event.start, info.event.end);
+        // 今日の目標
+        for (var _i = 0, goal_1 = goal; _i < goal_1.length; _i++) {
+            var i = goal_1[_i];
+            var modalGoalChild = document.createElement('div');
+            modalGoalChild.className = 'flex-row';
+            var modalGoalText = document.createElement('p');
+            var modalGoalRatio = document.createElement('p');
+            modalGoalText.textContent = i[0];
+            modalGoalRatio.textContent = i[1] + '%';
+            modalGoalChild.appendChild(modalGoalText);
+            modalGoalChild.appendChild(modalGoalRatio);
+            modalGoal === null || modalGoal === void 0 ? void 0 : modalGoal.appendChild(modalGoalChild);
+        }
+        // 進捗
+        for (var i = 0; i < progress.length; i++) {
+            var modalProgressChild = document.createElement('div');
+            modalProgressChild.classList.add('flex-row', 'progress');
+            var modalProgressText = document.createElement('p');
+            modalProgressText.textContent = progress[i][0];
+            var modalProgressDiv = document.createElement('div');
+            modalProgressDiv.className = 'flex-row';
+            var modalProgressInputRapper = document.createElement('p');
+            var modalProgressInput = document.createElement('input');
+            var modalProgressTaskRatio = document.createElement('p');
+            modalProgressInput.type = "text";
+            modalProgressInput.className = "progress-input";
+            modalProgressInput.value = progress[i][1];
+            modalProgressTaskRatio.textContent = " / " + task[i][1] + "%";
+            modalProgressInputRapper.appendChild(modalProgressInput);
+            modalProgressDiv.appendChild(modalProgressInputRapper);
+            modalProgressDiv.appendChild(modalProgressTaskRatio);
+            modalProgressChild.appendChild(modalProgressText);
+            modalProgressChild.appendChild(modalProgressDiv);
+            modalProgress === null || modalProgress === void 0 ? void 0 : modalProgress.appendChild(modalProgressChild);
+        }
+    }
+    function devideSentence(s) {
+        var devideComma = s.split(',');
+        var devidedSentence = [];
+        for (var _i = 0, devideComma_1 = devideComma; _i < devideComma_1.length; _i++) {
+            var i = devideComma_1[_i];
+            devidedSentence.push(i.split(':'));
+        }
+        return devidedSentence;
+    }
+    function initModal() {
+        removeChilds(modalGoal);
+        removeChilds(modalProgress);
+    }
+    function removeChilds(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    function arrangeTime(start, end) {
+        start = start.toString().split(' ');
+        end = end.toString().split(' ');
+        var time = Month[start[1]] + '/' + start[2] + '(' + DoW[start[0]] + ') ';
+        if (end) {
+            time = time + start[4].slice(0, -3) + '〜' + end[4].slice(0, -3);
+        }
+        return time;
+    }
 });
