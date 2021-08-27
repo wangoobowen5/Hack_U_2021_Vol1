@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 eventInfo = info;
                 modal === null || modal === void 0 ? void 0 : modal.style.display = 'block';
                 var planData = {
-                    'planid': info.event.extendedProps.planid,
-                    'start': info.event.start,
-                    'end': info.event.end
+                    'planid': info.event.extendedProps.planid
                 };
                 $.ajax({
                     type: 'POST',
@@ -45,7 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     dataType: 'json'
                 })
                     .then(function (data) {
-                    console.log('succes: ' + data['planid'] + data['start']);
+                    console.log('succes: ' + data['goal'] + data['progress'] + data['task']);
+                    var goal = devideSentence(data['goal']);
+                    var progress = devideSentence(data['progress']);
+                    var task = devideSentence(data['task']);
+                    console.log(goal);
+                    console.log(progress);
+                    console.log(task);
+                    // createModalElements(data['goal'])
                 }, function (error) {
                     console.log('error');
                 });
@@ -86,4 +91,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
+    function createModalElements(goal, progress, task) {
+    }
+    function devideSentence(s) {
+        var devideComma = s.split(',');
+        var devidedSentence = [];
+        for (var _i = 0, devideComma_1 = devideComma; _i < devideComma_1.length; _i++) {
+            var i = devideComma_1[_i];
+            devidedSentence.push(i.split(':'));
+        }
+        return devidedSentence;
+    }
 });

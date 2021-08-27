@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 eventInfo = info;
                 modal?.style.display = 'block';
                 let planData = {
-                    'planid': info.event.extendedProps.planid,
-                    'start': info.event.start,
-                    'end': info.event.end
+                    'planid': info.event.extendedProps.planid
                 };
                 $.ajax({
                     type: 'POST',
@@ -46,7 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(
                     data => {  // Ajax成功時の処理
-                        console.log('succes: ' + data['planid'] + data['start']);
+                        console.log('succes: ' + data['goal'] + data['progress'] + data['task']);
+                        const goal = devideSentence(data['goal']);
+                        const progress = devideSentence(data['progress']);
+                        const task = devideSentence(data['task']);
+                        console.log(goal);
+                        console.log(progress);
+                        console.log(task);
+                        // createModalElements(data['goal'])
                     },
                     error => {  // Ajax失敗時の処理
                         console.log('error');
@@ -92,7 +97,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('error');
             }
         )
-
         modal?.style.display = 'none';
     }, false);
+
+    function createModalElements(goal: string, progress: string, task: string) {
+
+    }
+
+    function devideSentence(s: string) {
+        const devideComma = s.split(',');
+        const devidedSentence = [];
+        for (let i of devideComma) {
+            devidedSentence.push(i.split(':'));
+        }
+        return devidedSentence;
+    }
 });
