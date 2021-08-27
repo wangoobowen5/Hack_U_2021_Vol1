@@ -70,7 +70,7 @@
                                 <p>スライド作成</p>
                                 <div class="flex-row">
                                 <p><input type="text"></p>
-                                    <p> / 50%</p>
+                                    <p> / 60%</p>
                                 </div>
                             </div>
                             <div class="flex-row">

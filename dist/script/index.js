@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var buttonCancel = document.getElementById('button-cancel');
     var buttonClose = document.getElementById('button-close');
     var buttonSave = document.getElementById('button-save');
+    var eventInfo;
     firebase.auth().onAuthStateChanged(function (user) {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,8 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             // 予定を押した時の処理
             eventClick: function (info) {
+                eventInfo = info;
                 modal === null || modal === void 0 ? void 0 : modal.style.display = 'block';
-                var postData = {
+                var planData = {
                     'planid': info.event.extendedProps.planid,
                     'start': info.event.start,
                     'end': info.event.end
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 $.ajax({
                     type: 'POST',
                     url: 'get_plan_detail.php',
-                    data: postData,
+                    data: planData,
                     dataType: 'json'
                 })
                     .then(function (data) {
@@ -67,6 +69,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false);
     // 保存ボタンを押したらajaxでPOSTしてモーダルを閉じる
     buttonSave === null || buttonSave === void 0 ? void 0 : buttonSave.addEventListener('click', function () {
+        var progressData = {
+            "planid": eventInfo.event.extendedProps.planid,
+            "progress": "'内容箇条書き':20,'スライド作成': 50,'発表練習':0"
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'save_progress.php',
+            data: progressData,
+            dataType: 'json'
+        })
+            .then(function (data) {
+            console.log('succes: ' + data['planid'] + " " + data['progress']);
+        }, function (error) {
+            console.log('error');
+        });
         modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
 });
