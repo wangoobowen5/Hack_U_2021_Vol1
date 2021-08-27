@@ -46,7 +46,7 @@
                             <p class="modal-time" id="modal-time">8/27（金）13:00 ~ 15:00</p>
                         </section>
                         <section class="modal-section flex-column">
-                            <h3>今日の目標</h3>
+                            <h3>目標</h3>
                             <div class="flex-column" id="modal-goal">
                                 <div class="flex-row">
                                     <p>スライド作成</p>
