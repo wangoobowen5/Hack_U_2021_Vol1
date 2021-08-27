@@ -28,6 +28,36 @@
       "color" => "#99CFE5"
     )
   );
+  $list = array(
+    array(
+      "planid" => "8",
+      "title" => "プレゼン準備",
+      "start" => "2021-08-24T08:00:00",
+      "end" => "2021-08-24T10:30:00",
+      "color" => "#EDAD0B"
+    ),
+    array(
+      "planid" => "8",
+      "title" => "プレゼン準備",
+      "start" => "2021-08-25T08:00:00",
+      "end" => "2021-08-25T10:30:00",
+      "color" => "#EDAD0B"
+    ),
+    array(
+      "planid" => "8",
+      "title" => "プレゼン準備",
+      "start" => "2021-08-26T08:00:00",
+      "end" => "2021-08-26T10:30:00",
+      "color" => "#EDAD0B"
+    ),
+    array(
+      "planid" => "8",
+      "title" => "プレゼン準備",
+      "start" => "2021-08-27T08:00:00",
+      "end" => "2021-08-27T10:30:00",
+      "color" => "#EDAD0B"
+    )
+    );
   // 明示的に指定しない場合は、text/html型と判断される
   header("Content-type: application/json; charset=UTF-8");
   //JSONデータを出力
