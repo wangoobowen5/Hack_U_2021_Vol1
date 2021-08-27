@@ -133,6 +133,28 @@ document.addEventListener('DOMContentLoaded', function () {
             modalGoalChild.appendChild(modalGoalRatio);
             modalGoal === null || modalGoal === void 0 ? void 0 : modalGoal.appendChild(modalGoalChild);
         }
+        // 進捗
+        for (var i = 0; i < progress.length; i++) {
+            var modalProgressChild = document.createElement('div');
+            modalProgressChild.classList.add('flex-row', 'progress');
+            var modalProgressText = document.createElement('p');
+            modalProgressText.textContent = progress[i][0];
+            var modalProgressDiv = document.createElement('div');
+            modalProgressDiv.className = 'flex-row';
+            var modalProgressInputRapper = document.createElement('p');
+            var modalProgressInput = document.createElement('input');
+            var modalProgressTaskRatio = document.createElement('p');
+            modalProgressInput.type = "text";
+            modalProgressInput.className = "progress-input";
+            modalProgressInput.value = progress[i][1];
+            modalProgressTaskRatio.textContent = " / " + task[i][1] + "%";
+            modalProgressInputRapper.appendChild(modalProgressInput);
+            modalProgressDiv.appendChild(modalProgressInputRapper);
+            modalProgressDiv.appendChild(modalProgressTaskRatio);
+            modalProgressChild.appendChild(modalProgressText);
+            modalProgressChild.appendChild(modalProgressDiv);
+            modalProgress === null || modalProgress === void 0 ? void 0 : modalProgress.appendChild(modalProgressChild);
+        }
     }
     function devideSentence(s) {
         var devideComma = s.split(',');

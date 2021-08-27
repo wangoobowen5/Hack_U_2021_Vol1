@@ -143,6 +143,28 @@ document.addEventListener('DOMContentLoaded', function() {
             modalGoalChild.appendChild(modalGoalRatio);
             modalGoal?.appendChild(modalGoalChild);
         }
+        // 進捗
+        for (let i=0; i<progress.length; i++) {
+            const modalProgressChild = document.createElement('div');
+            modalProgressChild.classList.add('flex-row', 'progress');
+            const modalProgressText = document.createElement('p');
+            modalProgressText.textContent = progress[i][0]
+            const modalProgressDiv = document.createElement('div');
+            modalProgressDiv.className = 'flex-row';
+            const modalProgressInputRapper = document.createElement('p');
+            const modalProgressInput = document.createElement('input');
+            const modalProgressTaskRatio = document.createElement('p');
+            modalProgressInput.type = "text";
+            modalProgressInput.className = "progress-input";
+            modalProgressInput.value = progress[i][1];
+            modalProgressTaskRatio.textContent = " / " + task[i][1] + "%";
+            modalProgressInputRapper.appendChild(modalProgressInput);
+            modalProgressDiv.appendChild(modalProgressInputRapper);
+            modalProgressDiv.appendChild(modalProgressTaskRatio);
+            modalProgressChild.appendChild(modalProgressText);
+            modalProgressChild.appendChild(modalProgressDiv);
+            modalProgress?.appendChild(modalProgressChild);
+        }
     }
 
     function devideSentence(s: string) {
