@@ -81,13 +81,11 @@ nav {
 
 .modal-body {
   background-color: #ffffff;
-  width: 700px;
-  height: 700px;
-}
-
-.modal-rappar {
-  width: 600px;
-  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-row {
@@ -100,4 +98,34 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#modal-rappar {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.modal p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-menu-button {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: none;
+  padding: 0;
+  margin: 0 5px;
+  font-size: 30px;
+}
+
+.modal-section h2, .modal-section h3, .modal-time{
+  text-align: center;
+}
+
+.progress {
+  margin-bottom: 5px;
 }
