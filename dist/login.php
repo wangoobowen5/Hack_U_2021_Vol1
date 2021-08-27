@@ -11,6 +11,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="image/logo.svg" type="image/svg+xml">
 
 </head>
 <body>
