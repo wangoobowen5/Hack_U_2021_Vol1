@@ -16,6 +16,7 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="image/logo.svg" type="image/svg+xml">
         <title>予定登録</title>
     </head>
     
