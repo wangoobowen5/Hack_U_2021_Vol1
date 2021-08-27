@@ -39,7 +39,7 @@
                     <input type="text" id="pct" name="pct" class="text_pct">%
                     <p class="task_sum">タスクの割合は合計で100%にしてください</p>
                 </div>
-                <div class="template">
+                <div class="btn_position">
                     <a href="./template.php" class="btn_cancel">キャンセル</a>
                     <input type="submit" value="登録" class="submit">
                 </div>
