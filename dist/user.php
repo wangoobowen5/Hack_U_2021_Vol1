@@ -46,15 +46,15 @@
             $dbh->query('SET NAMES utf8'); //文字コードのための設定
             $sql2 = "SELECT userid,begin,end  FROM usertbl WHERE userid='".$userid."'";
             $stmt = $dbh->prepare($sql2);
-		    $stmt->execute();
+            $stmt->execute();
 
-		    $sql3 = "UPDATE usertbl set begin = '".$begin_time."' WHERE userid='".$userid."'";
-		    $stmt = $dbh->prepare($sql3);
-		    $stmt->execute();
+            $sql3 = "UPDATE usertbl set begin = '".$begin_time."' WHERE userid='".$userid."'";
+            $stmt = $dbh->prepare($sql3);
+            $stmt->execute();
 
-		    $sql4 = "UPDATE usertbl set end = '".$end_time."' WHERE userid='".$userid."' ";
-		    $stmt = $dbh->prepare($sql4);
-		    $stmt->execute();
+            $sql4 = "UPDATE usertbl set end = '".$end_time."' WHERE userid='".$userid."' ";
+            $stmt = $dbh->prepare($sql4);
+            $stmt->execute();
             $dbh = null; //データベースから切断
 
             $update_text = "保存しました！";
@@ -74,7 +74,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user.css">
-    <link rel="icon" href="image/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
@@ -136,8 +135,7 @@
 
     <script src="./script/firebase.js" type="module"></script>
     <script src="./script/user.js" type="module"></script>
-    <script type="module">
-
+    <script type="text/javascript">
     function post(path, params, method) {
     if (method === void 0) { method = 'post'; }
     var form = document.createElement('form');
@@ -156,8 +154,19 @@
     form.submit();
     }
 
-    import { firebaseConfig } from './script/firebase_config.js';
-    firebase.initializeApp(firebaseConfig);
+    // 削除してください!!!!!!!!!!!!!!!!!!!!!
+    var firebaseconfig = {
+    apiKey: "AIzaSyDwJojwrerGP4S6jVjVxv-QPatOPsFx-8w",
+    authDomain: "hacku2021vol1.firebaseapp.com",
+    projectId: "hacku2021vol1",
+    storageBucket: "hacku2021vol1.appspot.com",
+    messagingSenderId: "712339293666",
+    appId: "1:712339293666:web:b628ae446860a961eb65bb",
+    measurementId: "G-PC3K6RFGW9"
+    };
+    // 削除してください!!!!!!!!!!!!!!!!!!!!!
+
+    firebase.initializeApp(firebaseconfig);
     </script>
 
     <?php 

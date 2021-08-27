@@ -45,10 +45,9 @@
                 <h3>テンプレート</h3> 
                 <select id="template-list" name="template-list">
                     <option value="" hiden>テンプレートを選択</option>
-                    <option value="hung-out">遊びの計画</option>
-                    <option value="report">レポート</option>
-                    <option value="presentation">プレゼン準備</option>
-                    <option value="time-keeper">会議のタイムキーパー</option>                    
+                    <option value="2">レポート</option>
+                    <option value="1">プレゼン準備</option>
+                    <option value="3">試験勉強</option>                    
                 </select>          
             </div>
             <div class="wrapper-text">
