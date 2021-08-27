@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     data => {  // Ajax成功時の処理
                         console.log('succes');
                         const goal = devideSentence(data['goal']);
-                        const progress = devideSentence(data['progress']);
+                        progress = devideSentence(data['progress']);
                         const task = devideSentence(data['task']);
                         createModalElements(info, goal, progress, task);
                     },
@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 保存ボタンを押したらajaxでPOSTしてモーダルを閉じる
     buttonSave?.addEventListener('click', () => {
+        
         let progressData = {
             "planid": eventInfo.event.extendedProps.planid,
             "progress": "'内容箇条書き':20,'スライド作成': 50,'発表練習':0"
@@ -119,12 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(
             data => {  // Ajax成功時の処理
                 console.log('succes: ' + data['planid'] + " " + data['progress']);
+                modal?.style.display = 'none';
             },
             error => {  // Ajax失敗時の処理
-                console.log('error');
+                alert('error');
             }
         )
-        modal?.style.display = 'none';
     }, false);
 
     function createModalElements(info, goal, progress, task) {

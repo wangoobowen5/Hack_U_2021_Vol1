@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     .then(function (data) {
                     console.log('succes');
                     var goal = devideSentence(data['goal']);
-                    var progress = devideSentence(data['progress']);
+                    progress = devideSentence(data['progress']);
                     var task = devideSentence(data['task']);
                     createModalElements(info, goal, progress, task);
                 }, function (error) {
@@ -111,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(function (data) {
             console.log('succes: ' + data['planid'] + " " + data['progress']);
+            modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
         }, function (error) {
-            console.log('error');
+            alert('error');
         });
-        modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
     function createModalElements(info, goal, progress, task) {
         // 初期化
