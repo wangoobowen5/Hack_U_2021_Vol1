@@ -8,6 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <link rel="icon" href="image/logo.svg" type="image/svg+xml">
 </head>
 <body>
     <script src="./script/firebase.js" type="module"></script>

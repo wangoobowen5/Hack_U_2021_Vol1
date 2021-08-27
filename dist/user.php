@@ -74,6 +74,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user.css">
+    <link rel="icon" href="image/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.18/jquery.timepicker.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
@@ -136,7 +137,6 @@
     <script src="./script/firebase.js" type="module"></script>
     <script src="./script/user.js" type="module"></script>
     <script type="module">
-    /
 
     function post(path, params, method) {
     if (method === void 0) { method = 'post'; }

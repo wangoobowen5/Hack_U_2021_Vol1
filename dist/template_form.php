@@ -8,6 +8,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./css/template_form.css">
+        <link rel="icon" href="image/logo.svg" type="image/svg+xml">
         <title>テンプレートの登録</title>
     </head>
     
