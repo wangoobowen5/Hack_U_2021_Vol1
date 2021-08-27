@@ -4,7 +4,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttonCancel = document.getElementById('button-cancel');
     const buttonClose = document.getElementById('button-close');
     const buttonSave = document.getElementById('button-save');
+    const modalTitle = document.getElementById('modal-title');
+    const modalTime = document.getElementById('modal-time');
+    const modalGoal = document.getElementById('modal-goal');
+    const modalProgress = document.getElementById('modal-progress');
     let eventInfo;
+
+    const DoW = {
+        'Mon': '月',
+        'Tue': '火',
+        'Wed': '水',
+        'Thu': '木',
+        'Fri': '金',
+        'Sat': '土',
+        'Sun': '日'
+    };
+
+    const Month = {
+        'Jan': '1',
+        'Feb': '2',
+        'Mar': '3',
+        'Apr': '4',
+        'May': '5',
+        'Jun': '6',
+        'Jul': '7',
+        'Aug': '8',
+        'Sep': '9',
+        'Oct': '10',
+        'Nov': '11',
+        'Dec': '12'
+    };
 
     firebase.auth().onAuthStateChanged(function (user) {
         const calendarEl = document.getElementById('calendar');
@@ -48,10 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const goal = devideSentence(data['goal']);
                         const progress = devideSentence(data['progress']);
                         const task = devideSentence(data['task']);
-                        console.log(goal);
-                        console.log(progress);
-                        console.log(task);
-                        // createModalElements(data['goal'])
+                        createModalElements(info, goal, progress, task);
                     },
                     error => {  // Ajax失敗時の処理
                         console.log('error');
@@ -100,7 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modal?.style.display = 'none';
     }, false);
 
-    function createModalElements(goal: string, progress: string, task: string) {
+    function createModalElements(info, goal, progress, task) {
+        initModal();
+        modalTitle?.textContent = info.event.title;
+        modalTime?.textContent = arrangeTime(info.event.start, info.event.end);
 
     }
 
@@ -111,5 +140,26 @@ document.addEventListener('DOMContentLoaded', function() {
             devidedSentence.push(i.split(':'));
         }
         return devidedSentence;
+    }
+
+    function initModal() {
+        removeChilds(modalGoal);
+        removeChilds(modalProgress);
+    }
+
+    function removeChilds(parent) {
+        while(parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+
+    function arrangeTime(start, end) {
+        start = start.toString().split(' ');
+        end = end.toString().split(' ');
+        let time = Month[start[1]] + '/' + start[2] + '(' + DoW[start[0]] + ') ';
+        if (end) {
+            time = time + start[4].slice(0, -3) + '〜' + end[4].slice(0, -3);
+        }
+        return time;
     }
 });

@@ -5,7 +5,34 @@ document.addEventListener('DOMContentLoaded', function () {
     var buttonCancel = document.getElementById('button-cancel');
     var buttonClose = document.getElementById('button-close');
     var buttonSave = document.getElementById('button-save');
+    var modalTitle = document.getElementById('modal-title');
+    var modalTime = document.getElementById('modal-time');
+    var modalGoal = document.getElementById('modal-goal');
+    var modalProgress = document.getElementById('modal-progress');
     var eventInfo;
+    var DoW = {
+        'Mon': '月',
+        'Tue': '火',
+        'Wed': '水',
+        'Thu': '木',
+        'Fri': '金',
+        'Sat': '土',
+        'Sun': '日'
+    };
+    var Month = {
+        'Jan': '1',
+        'Feb': '2',
+        'Mar': '3',
+        'Apr': '4',
+        'May': '5',
+        'Jun': '6',
+        'Jul': '7',
+        'Aug': '8',
+        'Sep': '9',
+        'Oct': '10',
+        'Nov': '11',
+        'Dec': '12'
+    };
     firebase.auth().onAuthStateChanged(function (user) {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -47,10 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var goal = devideSentence(data['goal']);
                     var progress = devideSentence(data['progress']);
                     var task = devideSentence(data['task']);
-                    console.log(goal);
-                    console.log(progress);
-                    console.log(task);
-                    // createModalElements(data['goal'])
+                    createModalElements(info, goal, progress, task);
                 }, function (error) {
                     console.log('error');
                 });
@@ -91,7 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         modal === null || modal === void 0 ? void 0 : modal.style.display = 'none';
     }, false);
-    function createModalElements(goal, progress, task) {
+    function createModalElements(info, goal, progress, task) {
+        initModal();
+        modalTitle === null || modalTitle === void 0 ? void 0 : modalTitle.textContent = info.event.title;
+        modalTime === null || modalTime === void 0 ? void 0 : modalTime.textContent = arrangeTime(info.event.start, info.event.end);
     }
     function devideSentence(s) {
         var devideComma = s.split(',');
@@ -101,5 +128,24 @@ document.addEventListener('DOMContentLoaded', function () {
             devidedSentence.push(i.split(':'));
         }
         return devidedSentence;
+    }
+    function initModal() {
+        removeChilds(modalGoal);
+        removeChilds(modalProgress);
+    }
+    function removeChilds(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    function arrangeTime(start, end) {
+        start = start.toString().split(' ');
+        end = end.toString().split(' ');
+        console.log(start);
+        var time = Month[start[1]] + '/' + start[2] + '(' + DoW[start[0]] + ') ';
+        if (end) {
+            time = time + start[4].slice(0, -3) + '〜' + end[4].slice(0, -3);
+        }
+        return time;
     }
 });
