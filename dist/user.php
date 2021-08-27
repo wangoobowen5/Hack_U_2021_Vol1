@@ -135,7 +135,8 @@
 
     <script src="./script/firebase.js" type="module"></script>
     <script src="./script/user.js" type="module"></script>
-    <script type="text/javascript">
+    <script type="module">
+    /
 
     function post(path, params, method) {
     if (method === void 0) { method = 'post'; }
@@ -155,7 +156,8 @@
     form.submit();
     }
 
-    firebase.initializeApp(firebaseconfig);
+    import { firebaseConfig } from './script/firebase_config.js';
+    firebase.initializeApp(firebaseConfig);
     </script>
 
     <?php 
